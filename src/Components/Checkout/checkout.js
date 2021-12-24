@@ -1,64 +1,82 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import {countries} from './countries'
 import { Link } from "react-router-dom";
 import './checkout.css'
 import Hero from '../Hero/Hero';
 import Image from "../../Assets/cart/cart.png";
 
+export default function Checkout (){
+       const loggedIn=JSON.parse(localStorage.getItem('logged_in'));
+       const order=JSON.parse(localStorage.getItem('order'));
 
-export default class Checkout extends Component {
-    constructor(props){
-        super(props)
-        this.loggedIn=JSON.parse(localStorage.getItem('logged_in'));
-        this.state={
-            fname:this.loggedIn.fname,
-            lname:this.loggedIn.lname,
-            email:this.loggedIn.email,
-            phone:this.loggedIn.phone,
-            country:this.loggedIn.country,
-            cashMsg1:'flex',
-            cashMsg2:'none',
-            redirect:null,
+       const[userData,setUserData]=useState({
+        fname:loggedIn.fname,
+        lname:loggedIn.lname,
+        email:loggedIn.email,
+        phone:loggedIn.phone,
+        country:loggedIn.country,
+        cashMsg1:'flex',
+        cashMsg2:'none',
+        redirect:null,
+       })
+
+      handleChange=(e)=>{
+          const {name,value}=e.target;
+          setUserData((prev)=>{
+              return {...prev,[name]:value}
+          })
+    }
+
+    handlePayment= (e)=>{
+        const {name,value}=e.target;
+        if( value==="cash"){
+            setUserData((prev)=>{
+                return {...prev,cashMsg1:"flex",cashMsg2:'none'}
+            })
+           
+         }else{
+            setUserData((prev)=>{
+                return {...prev,cashMsg1:"none",cashMsg2:'flex'}
+            })
+         }
+ 
+     }
+
+     totalPrice = ()=>{
+        let sum=0;
+        for(let obj of order){
+            sum+=obj.counter*obj.price;
         }
-        this.order=JSON.parse(localStorage.getItem('order'));
-
+        return sum;
     }
-
-    handleChange=(e)=>{
-        this.setState({
-            [e.target.name]:e.target.value
-        })
-    }
-
 
     handleSubmit=(e)=>{
         e.preventDefault()
-        this.checkoutInfo={
-            fname:this.state.fname,
-            lname:this.state.lname,
-            country:this.state.country,
+        const checkoutInfo={
+            fname:userData.fname,
+            lname:userData.lname,
+            country:userData.country,
             streetAddress:e.target.streetAddress.value,
             town:e.target.town.value,
-            state: e.target.state.value,
+            userData: e.target.userData.value,
             zip: e.target.zip.value,
             price:JSON.parse(localStorage.getItem('total')),
             coupon:"cat",
             discount:JSON.parse(localStorage.getItem('total'))-JSON.parse(localStorage.getItem('subTotal')),
-            payment: this.state.cashMsg1==="flex"? "Cash":"Credit Card",
+            payment: userData.cashMsg1==="flex"? "Cash":"Credit Card",
             status:"Pending",
-            phone:this.state.phone,
-            email:this.state.email,
-            orders:this.order,
+            phone:userData.phone,
+            email:userData.email,
+            orders:order,
             subTotal:JSON.parse(localStorage.getItem('subTotal'))
         }
 
-        
         let ordersArr =JSON.parse(localStorage.getItem('submittedOrders'));
         if(ordersArr){
             ordersArr.push(this.checkoutInfo)
             localStorage.setItem('submittedOrders',JSON.stringify(ordersArr));
         }else{
-            localStorage.setItem('submittedOrders',JSON.stringify([this.checkoutInfo]));
+            localStorage.setItem('submittedOrders',JSON.stringify([checkoutInfo]));
         }
         localStorage.removeItem('order');
         localStorage.removeItem('subTotal');
@@ -68,28 +86,14 @@ export default class Checkout extends Component {
         this.setState({redirect:true});
     }
 
-    handlePayment= (e)=>{
-       if( e.target.value==="cash"){
-           this.setState({cashMsg1:"flex",cashMsg2:'none'});
 
-        }else{
-            this.setState({cashMsg1:'none',cashMsg2:'flex'})
-        }
 
-    }
 
-    totalPrice = ()=>{
-        let sum=0;
-        for(let obj of this.order){
-            sum+=obj.counter*obj.price;
-        }
-        return sum;
-    }
-    render() {
-        if(this.state.redirect)
-        return (
-            <>
-            <Hero title="Checkout Page"/>
+
+    return (
+        <>
+           {userData.redirect ? <>
+           <Hero title="Checkout Page"/>
             <div className="empty-container">
             <div>Your order is submitted, it will be delivered within 2 to three weeks!</div>
             <div className="checkout-orderDetails">
@@ -107,15 +111,10 @@ export default class Checkout extends Component {
               <button className="table-button3">continue shopping</button>
             </Link>
           </div>
-          </>
-        )
-
-        if(this.order.length!=0)
-        return (
-            <>
+          </> : userData.length !=0 ?  <>
             <Hero title="Checkout Page"/>
             <div className='checkout-container'>
-                    <form action='' onSubmit={this.handleSubmit}>
+                    <form action='' onSubmit={handleSubmit}>
                         <div className='checkout-left'>
                                 <div className='left-container'>
 
@@ -123,16 +122,16 @@ export default class Checkout extends Component {
                                 <div className='checkout-adjacent'>
                                     <label>
                                         <p>First Name:</p>
-                                        <input placeholder='First Name' type="text" name="fname" value={this.state.fname} onChange={this.handleChange}/>
+                                        <input placeholder='First Name' type="text" name="fname" value={fname} onChange={handleChange}/>
                                     </label>
                                     <label>
                                         <p>Last Name:</p>
-                                        <input placeholder='Last Name' type="text" name="lname" onChange={this.handleChange} value={this.state.lname}/>
+                                        <input placeholder='Last Name' type="text" name="lname" onChange={handleChange} value={lname}/>
                                     </label>
                                 </div>
                                 <label>
                                     <p>Country/Region</p>
-                                    <select value={this.state.country}  onChange={this.handleChange} required name="country">
+                                    <select value={country}  onChange={handleChange} required name="country">
 
                                         {countries.map((element,i)=>{return<option key={i}>{element.name}</option>
                                         })}
@@ -156,11 +155,11 @@ export default class Checkout extends Component {
                                 </label>
                                 <label>
                                     <p>Phone</p>
-                                    <input placeholder='Phone' onChange={this.handleChange} required name="phone" type="tel" value={this.state.phone}/>
+                                    <input placeholder='Phone' onChange={handleChange} required name="phone" type="tel" value={phone}/>
                                     </label>
                                     <label>
                                     <p>Email address</p>
-                                    <input placeholder='Email address' onChange={this.handleChange} required type="email" name="email" value={this.state.email}/>
+                                    <input placeholder='Email address' onChange={handleChange} required type="email" name="email" value={email}/>
                                 </label>
                             </div>
                         </div>
@@ -182,7 +181,7 @@ export default class Checkout extends Component {
                                     )}
                                 <tr>
                                     <td className="table-grey">Subtotal</td>
-                                    <td>JOD {this.totalPrice()}</td>
+                                    <td>JOD {totalPrice()}</td>
                                 </tr>
                                 <tr>
                                     <td>Discount</td>
@@ -203,7 +202,7 @@ export default class Checkout extends Component {
                             <label htmlFor="cash">Cash on delivery</label>
                         </div>
                         <div className="payment-msg-container">
-                            <p className="payment-msg" id="one" style={{display:this.state.cashMsg1}}>Pay with cash upon delivery</p>
+                            <p className="payment-msg" id="one" style={{display:cashMsg1}}>Pay with cash upon delivery</p>
                         </div>
                         <div className='radios'>
                             <input onChange={this.handlePayment} type="radio" name="method" id="credit-cards" value="credit-cards"/>
@@ -212,7 +211,7 @@ export default class Checkout extends Component {
                         <div className="payment-msg-container1">
 
 
-                            <div className="payment-msg" id="two" style={{display:this.state.cashMsg2}}>
+                            <div className="payment-msg" id="two" style={{display:cashMsg2}}>
                                 <label>
                                     <p>Card Number</p>
                                     <input type="number" placeholder='xxxx-xxxx-xxxx-xxxx'></input>
@@ -235,11 +234,7 @@ export default class Checkout extends Component {
                 </div>
                 </form>
             </div>
-            </>
-        )
-        else
-        return(
-            <>
+            </> : <>
             <Hero title="Checkout Page"/>
             <div className="empty-container">
               <div className="title-cart">Your cart is currently empty</div>
@@ -248,7 +243,8 @@ export default class Checkout extends Component {
                 <button className="table-button3">Back to shopping</button>
               </Link>
             </div>
-            </>
+            </> }  </>
         )
-    }
+      
+
 }
