@@ -1,10 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './footer.css'
 
 export default function Footer() {
   return (
-      <div>
-
 <footer id="footer">
     <div className="social_media">
       <ul>
@@ -43,8 +41,5 @@ export default function Footer() {
     </div>
     <div className="rights"><p> React Group 4 &copy; 2021</p></div>
   </footer>
-        
-        
-      </div>
   )
 }
