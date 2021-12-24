@@ -1,27 +1,23 @@
-import React, { Component } from 'react';
+import React ,{useState} from 'react';
 import Products from './Products';
 import Hero from '../Hero/Hero';
 import "./Shop.css";
 
 
-export class Shop extends Component {
-    constructor(props){
-        super(props)
-        this.state={
-            items:JSON.parse(localStorage.getItem('items'))
-        }
-    }
-
-    render() {
-        return (
-            <>
+export function Shop (props) {
+    const [state,setState]=useState({ items:JSON.parse(localStorage.getItem('items'))})
+    
+    return (
+        <>
             <Hero title="Shop Page"/>
                 <div className='shop-container'>
-                    <Products items={this.state.items} />
+                    <Products items={state.items} />
                 </div>
             </>
         )
     }
-}
-
-export default Shop
+    
+    
+    export default Shop
+    
+    

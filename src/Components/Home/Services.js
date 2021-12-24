@@ -1,10 +1,8 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "./Service.css";
 
-class Service extends Component {
-    constructor(props) {
-        super(props)
-        this.state = [
+function Service (props) {
+  const [state,setState] = useState([
             {
               icon: "fas fa-shopping-cart",
               service: "Easy shopping",
@@ -26,13 +24,11 @@ class Service extends Component {
               service: "Contact US",
               description: "For complaints and suggstion contact us on email",
             },
-          ];
-    }
-    
-  render() {
-    return (
-      <div className="serviceContainer">
-        {this.state.map((serv) => {
+          ])
+
+          return (
+            <div className="serviceContainer">
+        {state.map((serv) => {
           return (
             <div className="serviceList">
               <i className={serv.icon} id="icons"></i>
@@ -44,5 +40,6 @@ class Service extends Component {
       </div>
     );
   }
-}
 export default Service;
+ 
+  
