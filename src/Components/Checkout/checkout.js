@@ -73,7 +73,7 @@ export default function Checkout (){
 
         let ordersArr =JSON.parse(localStorage.getItem('submittedOrders'));
         if(ordersArr){
-            ordersArr.push(this.checkoutInfo)
+            ordersArr.push(checkoutInfo)
             localStorage.setItem('submittedOrders',JSON.stringify(ordersArr));
         }else{
             localStorage.setItem('submittedOrders',JSON.stringify([checkoutInfo]));
@@ -83,7 +83,10 @@ export default function Checkout (){
         localStorage.removeItem('total');
         localStorage.removeItem('discount');
         localStorage.removeItem('coupon');
-        this.setState({redirect:true});
+        setUserData((prev)=>{
+            return {...prev,redirect:true}
+        })
+       
     }
 
 
@@ -162,7 +165,7 @@ export default function Checkout (){
                                 </tr>
                             </thead>
                             <tbody>   
-                                {this.order.map((element,i)=>
+                                {order.map((element,i)=>
                                     <tr>
                                     <td>{element.itemName}</td>
                                     <td>JOD {element.price*element.counter}</td>
