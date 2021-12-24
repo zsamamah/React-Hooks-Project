@@ -1,0 +1,107 @@
+
+.home-heading {
+  text-align: center;
+  font-size: 4em;
+  font-weight: bold;
+}
+.testimonials-p {
+  font-size: 1.4em;
+}
+.people {
+  width: 30%;
+  color: black;
+  background-color: white;
+  margin: 0.5em;
+  align-items: center;
+  box-shadow: 20em rgba(0, 0, 0, 0.1);
+  text-align: center;
+  height:50vh;
+  padding: 0.5em;
+  margin: 2em;
+  box-shadow:  0.2em 0.2em 1em 0.2em grey;
+  border-radius: 0.6em;
+}
+.people img {
+  width: 50%;
+  border-radius: 50%;
+  padding: 0.5em;
+  height: 25vh;
+
+}
+.people h4 {
+  padding: 0.5em;
+  font-size: 1.6em;
+}
+.testimonials {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.testimonials-p {
+  font-size: 0.9em;
+}
+
+
+@media screen and (max-width: 634px) {
+  .people {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 1440px) {
+
+
+}
+
+@media screen and (max-width: 1060px) {
+  .testimonials-p {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 940px) {
+  .people {
+    height: 40vh;
+  }
+  .testimonials-p {
+    font-size: 0.6em;
+  }
+  .people h4 {
+    font-size: 1.3em;
+  }
+  .people {
+    margin: 0.5em;
+  }
+}
+@media screen and (max-width: 650px) {
+  .testimonials {
+    flex-direction: column;
+    width: 50%;
+  }
+  .people {
+    width: 100%;
+  }
+  .people img {
+    height: 15vh;
+    width: 35%;
+  }
+  .testimonials-p {
+    font-size: 0.8em;
+    padding: 1em;
+  }
+}
+@media screen and (max-width: 768px) {
+  .home-heading {
+    font-size: 3em;
+  }
+}
+@media screen and (max-width: 450px) {
+  .testimonials {
+    flex-direction: column;
+    width: 70%;
+  }
+  .home-heading {
+    font-size: 2em;
+    width : 90%;
+  }
+}

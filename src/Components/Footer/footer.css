@@ -1,0 +1,87 @@
+footer {
+    background-color: #808080;
+    color: white;
+    position: relative;
+    bottom: 0;
+    text-align: center;
+    height: max-content;
+    width: 100%;
+    padding-top: 30px;
+    /* margin-top:20px; */
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  footer > div{
+    position: relative;
+    bottom: 0;
+  }
+  .social_media ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .social_media li {
+    display: inline;
+    padding: 0;
+    margin: 5px;
+  }
+  .social_media a {
+    text-decoration: none;
+    color: white;
+  }
+  .facebook:hover,
+  .linkedin:hover {
+    color: #0080ff;
+  }
+  .github:hover {
+    color: #969696;
+  }
+  .youtube:hover {
+    color: red;
+  }
+  .last_services {
+    font-size: 10px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .last_services p{
+    margin: 0 auto;
+  }
+  .rights {
+    color: white;
+    font-size: 10px;
+    padding: 0;
+    margin-top: 0;
+  }
+  .rights p{
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-height:1024px){
+    .footer{
+      position: relative;
+      bottom: 0;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .last_services p{
+      width: 100%;
+    }
+    .rights p{
+      width: 100%;
+    }
+  }
+  @media screen and (max-width:360px){
+    .last_services p{
+      width: 100%;
+      font-size: 1.3em;
+    }
+    .rights p{
+      width: 100%;
+      font-size: 1em;
+    }
+
+  }

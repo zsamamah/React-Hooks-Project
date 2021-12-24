@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital@1&family=Roboto+Condensed:wght@300&family=Roboto:wght@900&family=Source+Sans+Pro:wght@200&family=Vidaloka&family=Vollkorn&display=swap");
+body {
+  font-family: "Noto Serif", serif;
+  font-family: "Roboto", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Vidaloka", serif;
+  font-family: "Vollkorn", serif;
+}
+.client {
+  /* margin:4em 0; */
+  width: 100%;
+  height: 20%;
+  text-align: center;
+}
+
+.carousel-icon i {
+  font-size: 5rem;
+  color: rgba(#fff, 0.3);
+}
+.carousel-item i {
+  font-size: 1.6rem;
+  color: rgba(#fff, 0.3);
+}
+
+.t-card {
+  padding: 1.125rem 1.125rem;
+  background-color: rgba(#000, 0.5);
+  border-radius: 1.25rem;
+  color: #fff;
+  height: auto;
+  max-width: 450px;
+  margin: auto;
+}
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 1.5625rem solid transparent;
+  border-right: 1.5625rem solid transparent;
+  border-top: 1.25rem solid rgba(#000, 0.5);
+}
+
+.text-center {
+  display: block;
+  margin: 0 auto;
+  text-align: center !important ;
+}
+.lh-lg {
+  font-size: 1em;
+}
+
+.text-warning{
+  color : #ff9500 !important;
+}
+@media screen and (max-width: 450px) {
+  .client {
+    width: 80%;
+    margin: auto;
+  }
+}

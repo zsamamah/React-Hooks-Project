@@ -1,0 +1,179 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+.checkout-left select, .checkout-left input{
+    width: 90%;
+}
+
+
+.checkout-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color:rgba(3, 169, 244, 0.05);
+}
+.checkout-container form{
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+
+}
+
+.left-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 80%;
+
+}
+
+.checkout-left{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    margin-top: 2em;
+    width: 46%;
+    background-color: white;
+    border-style: solid;
+    border-color: rgba(219, 219, 219, 0.566);
+    box-shadow: rgba(219, 219, 219, 0.566);
+}
+
+.checkout-adjacent{
+    display: flex;
+}
+
+.checkout-right{
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    justify-content: space-evenly;
+    height: 70vh;
+    margin-top: 2em;
+    background-color: white;
+    border-style: solid;
+    border-color: rgba(219, 219, 219, 0.566);
+    box-shadow: rgba(219, 219, 219, 0.566);
+    align-items: center;
+}
+
+.checkout-summary{
+    width: 90%;
+}
+.checkout-summary td{
+    padding-left:1em;
+}
+
+.checkout-summary table, .checkout-summary th, .checkout-summary td{
+   border: 1px solid lightgray;
+   border-radius: 0.2em;
+
+}
+
+.checkout-summary table{
+    width:90%;
+    border-radius: 0.5em;
+}
+
+.table-grey{
+    background-color: rgba(219, 219, 219, 0.566);
+}
+
+.checkout-summary th{
+    width: 80%;
+    text-align: left;
+}
+
+.checkout-payment{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: lightgray;
+    border-radius: 0.5em;
+}
+
+.radios{
+    display: flex;
+    align-items: center;
+    padding-left: 1em;
+    padding-top: 0.4em;
+}
+
+.payment-msg-container{
+    width: 75%;
+    /* height: 20%; */
+    display: flex;
+    align-items: center;
+}
+
+.payment-msg-container p{
+    font-size: 1em;
+    /* height: 100%; */
+    vertical-align: center;
+    background-color: grey;
+}
+
+.payment-msg{
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-msg-container1{
+    width: 100%;
+    display: flex;
+}
+
+#one{
+    margin: 5% 15%;
+    color: white;
+}
+
+#two{
+    margin-left: 15%;
+    transition: display 500ms;
+
+}
+
+.orderBtn{
+    width: 95%;
+    display: flex;
+    justify-content: right;
+    margin-bottom: 0.5em;
+}
+
+.orderBtn button{
+    text-align: center;
+}
+
+#placeOrder{
+    width: 25%;
+    background-color: #2596be;
+    color: white;
+    border-radius: 0.5em;
+    padding: 0.7em 1em;
+    border-style: none;
+}
+
+@media only screen and (max-width: 750px) {
+    .checkout-container form{
+        width: 90%;
+    }
+    .checkout-container form{
+        flex-direction: column;
+    }
+
+    .checkout-right, .checkout-left{
+        width: 100%;
+    }
+
+    #placeOrder{
+        padding:0.7em 0;
+        width: 40%;
+    }
+}
+
+
+

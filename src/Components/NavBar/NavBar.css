@@ -1,0 +1,35 @@
+body {
+  background-color: whitesmoke;
+}
+nav.navbar.noTransparrent {
+  background-color: #ffffff;
+  color: black;
+  border-bottom: 1px solid #eee;
+}
+
+#custom-ul{
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+.navbar-brand img {
+  width: 2em;
+}
+.nav-link {
+  color: white;
+}
+.nav-link:hover{
+      color: orange !important;
+}
+#casting-color {
+  color: black;
+}
+.navbar-light .navbar-nav .nav-link {
+      color: rgba(0, 0, 0, 0.664);
+  }
+
+  @media only screen and (max-width: 450px){
+    #navBar{
+      /* width: 80% */
+    }
+  }

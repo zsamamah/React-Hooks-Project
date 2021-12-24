@@ -1,0 +1,30 @@
+.hero-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  background-image: url(../../Assets/accounts-assets/dev22.jpeg);
+  background-size: cover;
+  height: 20em;
+  width: 100%;
+  margin-bottom: 1em;
+}
+.hero-bg p {
+  color: white;
+  font-size: 5em;
+}
+@media only screen and (max-width: 800px) {
+  .hero-bg p {
+    font-size: 4em;
+  }
+}
+@media only screen and (max-width: 530px) {
+  .hero-bg p {
+    font-size: 3.5em;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .hero-bg p {
+    font-size: 3em;
+  }
+}
