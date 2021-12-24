@@ -20,14 +20,14 @@ export default function Checkout (){
         redirect:null,
        })
 
-      handleChange=(e)=>{
+     const handleChange=(e)=>{
           const {name,value}=e.target;
           setUserData((prev)=>{
               return {...prev,[name]:value}
           })
     }
 
-    handlePayment= (e)=>{
+    const handlePayment= (e)=>{
         const {value}=e.target;
         if( value==="cash"){
             setUserData((prev)=>{
@@ -42,7 +42,7 @@ export default function Checkout (){
  
      }
 
-     totalPrice = ()=>{
+    const totalPrice = ()=>{
         let sum=0;
         for(let obj of order){
             sum+=obj.counter*obj.price;
@@ -50,7 +50,7 @@ export default function Checkout (){
         return sum;
     }
 
-    handleSubmit=(e)=>{
+   const handleSubmit=(e)=>{
         e.preventDefault()
         const checkoutInfo={
             fname:userData.fname,
@@ -111,16 +111,16 @@ export default function Checkout (){
                                 <div className='checkout-adjacent'>
                                     <label>
                                         <p>First Name:</p>
-                                        <input placeholder='First Name' type="text" name="fname" value={fname} onChange={handleChange}/>
+                                        <input placeholder='First Name' type="text" name="fname" value={userData.fname} onChange={handleChange}/>
                                     </label>
                                     <label>
                                         <p>Last Name:</p>
-                                        <input placeholder='Last Name' type="text" name="lname" onChange={handleChange} value={lname}/>
+                                        <input placeholder='Last Name' type="text" name="lname" onChange={handleChange} value={userData.lname}/>
                                     </label>
                                 </div>
                                 <label>
                                     <p>Country/Region</p>
-                                    <select value={country}  onChange={handleChange} required name="country">
+                                    <select value={userData.country}  onChange={handleChange} required name="country">
 
                                         {countries.map((element,i)=>{return<option key={i}>{element.name}</option>
                                         })}
@@ -144,11 +144,11 @@ export default function Checkout (){
                                 </label>
                                 <label>
                                     <p>Phone</p>
-                                    <input placeholder='Phone' onChange={handleChange} required name="phone" type="tel" value={phone}/>
+                                    <input placeholder='Phone' onChange={handleChange} required name="phone" type="tel" value={userData.phone}/>
                                     </label>
                                     <label>
                                     <p>Email address</p>
-                                    <input placeholder='Email address' onChange={handleChange} required type="email" name="email" value={email}/>
+                                    <input placeholder='Email address' onChange={handleChange} required type="email" name="email" value={userData.email}/>
                                 </label>
                             </div>
                         </div>
@@ -187,20 +187,20 @@ export default function Checkout (){
                     </div>
                     <div className="checkout-payment">
                         <div className='radios'>
-                            <input onChange={this.handlePayment} type="radio" name="method" id="cash" value="cash" defaultChecked/>
+                            <input onChange={handlePayment} type="radio" name="method" id="cash" value="cash" defaultChecked/>
                             <label htmlFor="cash">Cash on delivery</label>
                         </div>
                         <div className="payment-msg-container">
-                            <p className="payment-msg" id="one" style={{display:cashMsg1}}>Pay with cash upon delivery</p>
+                            <p className="payment-msg" id="one" style={{display:userData.cashMsg1}}>Pay with cash upon delivery</p>
                         </div>
                         <div className='radios'>
-                            <input onChange={this.handlePayment} type="radio" name="method" id="credit-cards" value="credit-cards"/>
+                            <input onChange={handlePayment} type="radio" name="method" id="credit-cards" value="credit-cards"/>
                             <label htmlFor="credit-cards" >Credit Card</label>
                         </div>
                         <div className="payment-msg-container1">
 
 
-                            <div className="payment-msg" id="two" style={{display:cashMsg2}}>
+                            <div className="payment-msg" id="two" style={{display:userData.cashMsg2}}>
                                 <label>
                                     <p>Card Number</p>
                                     <input type="number" placeholder='xxxx-xxxx-xxxx-xxxx'></input>
