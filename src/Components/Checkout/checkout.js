@@ -1,13 +1,14 @@
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
 import {countries} from './countries'
 import { Link } from "react-router-dom";
 import './checkout.css'
 import Hero from '../Hero/Hero';
 import Image from "../../Assets/cart/cart.png";
+import cars from '../Shop/cars.json';
 
 export default function Checkout (){
        const loggedIn=JSON.parse(localStorage.getItem('logged_in'));
-       const order=JSON.parse(localStorage.getItem('order'));
+       const mycar=cars[localStorage.getItem('selected')];
 
        const[userData,setUserData]=useState({
         fname:loggedIn.fname,
@@ -44,7 +45,7 @@ export default function Checkout (){
 
     const totalPrice = ()=>{
         let sum=0;
-        for(let obj of order){
+        for(let obj of cars){
             sum+=obj.counter*obj.price;
         }
         return sum;
@@ -67,7 +68,7 @@ export default function Checkout (){
             status:"Pending",
             phone:userData.phone,
             email:userData.email,
-            orders:order,
+            orders:cars,
             subTotal:JSON.parse(localStorage.getItem('subTotal'))
         }
 
@@ -165,12 +166,8 @@ export default function Checkout (){
                                 </tr>
                             </thead>
                             <tbody>   
-                                {order.map((element,i)=>
-                                    <tr>
-                                    <td>{element.itemName}</td>
-                                    <td>JOD {element.price*element.counter}</td>
-                                    </tr>
-                                    )}
+                                {mycar&&<p>{mycar.name}</p>
+                                }
                                 <tr>
                                     <td className="table-grey">Subtotal</td>
                                     <td>JOD {totalPrice()}</td>

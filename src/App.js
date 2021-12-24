@@ -5,7 +5,7 @@ import Shop from "./Components/Shop/Shop";
 import Login from "./Components/Account/Login";
 import Register from "./Components/Account/Register";
 import Home from './Components/Home/Home'
-import Cart from "./Components/Cart/Cart";
+import Cart1 from "./Components/Cart/Cart1";
 import AddField from "./Components/Admin/addField";
 import NotFound from "./Components/NotFound/notfound";
 import UsersContainer from "./Components/Admin/usersContainer";
@@ -46,7 +46,7 @@ const [items, setitems] = useState(JSON.parse(localStorage.getItem("items")))
                 element={<Login handleChangeRole={handleChangeRole} />}
               />
               <Route path="/register" element={<Register />} />
-              <Route path="/cart" element={<Cart />} />
+              <Route path="/cart" element={<Cart1 />} />
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/shop" element={<Shop />} />
               <Route path="*" element={<NotFound />} />

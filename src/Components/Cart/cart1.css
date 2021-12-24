@@ -1,0 +1,10 @@
+#selected_car{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#booking_Form{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
