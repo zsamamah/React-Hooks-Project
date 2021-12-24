@@ -2,3 +2,13 @@
     margin: 0;
     padding: 0;
 }
+:root{
+--p_green:#004c3f;
+--p_light:#38786a;
+--p_dark:#002419;
+--s_teal:#b2dfdb;
+--s_light:#b2dfdb;
+--s_dark:#b2dfdb;
+--head_text:#ffffff;
+--body_text:#f4f4f4
+}
