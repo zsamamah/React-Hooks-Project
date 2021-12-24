@@ -1,13 +1,11 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "./Testimonials.css";
 import Jack_Pic from '../../Assets/testimonials/im23.jpg';
 import Ali_Pic from '../../Assets/testimonials/im21.jpg';
 import Kristeen_Pic from '../../Assets/testimonials/im20.jpg';
 
-class Testimonial extends Component {
-  constructor(props) {
-    super(props);
-    this.state = [
+function Testimonial (props) {
+const [state,setState] = useState([
       {
         name: "Jack peter",
         text: "‟I am very happy with my first experience with Platinum. The product was amazing thanks i will order again „",
@@ -23,15 +21,14 @@ class Testimonial extends Component {
         text: "‟Ordered several times n always satisfied with my purchases. Variety of collections with reasonable prices„",
         image: Kristeen_Pic,
       },
-    ];
-  }
-  render() {
+    ])
+
     return (
-        <div className='testimonials-container'>
+      <div className='testimonials-container'>
         <h2 className="home-heading">Testimonials</h2>
 
         <div className="testimonials">
-          {this.state.map((teamInfo,index) => {
+          {state.map((teamInfo,index) => {
             return (
               <div key={index} className="people">
                 <img alt="Review" src={teamInfo.image} />
@@ -44,6 +41,7 @@ class Testimonial extends Component {
       </div>
     );
   }
-}
-
-export default Testimonial;
+  
+  export default Testimonial;
+  
+  

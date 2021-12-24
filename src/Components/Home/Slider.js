@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './slider.css';
 import product1 from '../../Assets/Slider/product1.png';
 import product2 from '../../Assets/Slider/product2.png';
 import product3 from '../../Assets/Slider/product3.png';
 import product4 from '../../Assets/Slider/product4.png';
 
-export class Slider extends Component {
-  render() {
+export function Slider () {
     return (
       <section class="client pt-3 pb-5">
         <div class="container">
@@ -132,6 +131,5 @@ export class Slider extends Component {
       </section>
     )
   }
-}
 
 export default Slider

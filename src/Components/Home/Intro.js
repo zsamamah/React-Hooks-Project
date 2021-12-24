@@ -1,10 +1,8 @@
 import React from "react";
-import { Component } from "react";
 import "./Intro.css";
 import { Link } from "react-router-dom";
 
-class Intro extends Component {
-  render() {
+function Intro() {
     return (
       <section className="Home">
         <div className="main">
@@ -18,6 +16,5 @@ class Intro extends Component {
         </div>
       </section>
     );
-  }
 }
 export default Intro;
