@@ -104,7 +104,42 @@ if (products?.length) {
   return (
     <>
       <Hero title="Cart Page" />
-      <section className="cart-container">
+      <div id="cartContainer">
+        {
+          JSON.parse(localStorage.getItem('order')).map((el,index)=>{
+            return <>
+            <div>
+              <img src={el.img} alt="car" />
+            </div>
+            <div>
+              <div><p>{el.itemName}</p></div>
+            </div>
+            </>
+          })
+        }
+      </div>
+    </>
+  );
+} else {
+  return (
+    <>
+      <Hero title="Cart Page" />
+      <div className="empty-container">
+        <div className="title-cart">Your cart is currently empty</div>
+        <img src={Image} alt="empty cart" className="cart-img" />
+        <Link to="/shop">
+          <button className="table-button3">Back to shopping</button>
+        </Link>
+      </div>
+    </>
+  );
+}
+}
+
+export default Cart
+
+/*
+<section className="cart-container">
         <table className="table-products">
           <thead className="table-head">
             <tr className="table-header">
@@ -130,7 +165,6 @@ if (products?.length) {
                 </td>
                 <td className="title-products">{product.itemName}</td>
                 <td>JOD {product.price}</td>
-
                 <td>
                   <button 
                     className="table-button2"
@@ -212,22 +246,5 @@ if (products?.length) {
           </div>
         </div>
       </section>
-    </>
-  );
-} else {
-  return (
-    <>
-      <Hero title="Cart Page" />
-      <div className="empty-container">
-        <div className="title-cart">Your cart is currently empty</div>
-        <img src={Image} alt="empty cart" className="cart-img" />
-        <Link to="/shop">
-          <button className="table-button3">Back to shopping</button>
-        </Link>
-      </div>
-    </>
-  );
-}
-}
 
-export default Cart
+*/

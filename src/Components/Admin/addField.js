@@ -18,8 +18,9 @@ function AddField(props) {
     !localStorage.getItem("items")? localStorage.setItem("items", JSON.stringify(cardStorage)) : (cardStorage = JSON.parse(localStorage.getItem("items")));
     cardStorage = cardStorage ? cardStorage : JSON.parse(localStorage.getItem("items"));
     cardStorage.push({
-      itemName: e.target.heading.value,
-      text: textarea,
+      itemName: e.target.itemName.value,
+      model: e.target.model.value,
+      description: textarea,
       img: e.target.image.value,
       alt: e.target.alt.value,
       price: e.target.price.value,
@@ -35,15 +36,22 @@ function AddField(props) {
           <input
             required
             type="text"
-            name="heading"
-            placeholder="Product Name"
+            name="itemName"
+            placeholder="car Name"
+            className="btn border-dark"
+          />
+          <input
+            required
+            type="text"
+            name="model"
+            placeholder="Car Model"
             className="btn border-dark"
           />
           <textarea
             required
             cols="23"
             row="8"
-            name="text" value={textarea}
+            name="description" value={textarea}
             placeholder="Product Description" onChange={handleTextArea}
             className="btn border-dark"
           />
