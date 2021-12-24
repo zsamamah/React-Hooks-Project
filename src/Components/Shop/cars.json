@@ -1,57 +1,86 @@
 [
-    {
-        "id":"1",
-        "name":"Mercedes",
-        "model":"E-Class",
-        "year":"2019",
-        "price":"50",
-        "seats":"4",
-        "gear":"Automatic",
-        "color":"White",
-        "img":"https://cdn2.rcstatic.com/images/car_images/web/mercedes/e_class_lrg.jpg"
-    },
-    {
-        "id":"2",
-        "name":"Audi",
-        "model":"Q5",
-        "year":"2020",
-        "price":"30",
-        "seats":"5",
-        "gear":"Automatic",
-        "color":"White",
-        "img":"https://cdn2.rcstatic.com/images/car_images/web/audi/q5_lrg.jpg"
-    },
-    {
-        "id":"3",
-        "name":"Toyota",
-        "model":"Land Cruisere",
-        "year":"2018",
-        "price":"20",
-        "seats":"7",
-        "gear":"Automatic",
-        "color":"Black",
-        "img":"https://cdn2.rcstatic.com/images/car_images/new_images/land_rover/discovery_lrg.jpg"
-    },
-    {
-        "id":"4",
-        "name":"Fiat",
-        "model":"Cabrio",
-        "year":"2015",
-        "price":"10",
-        "seats":"4",
-        "gear":"Manual",
-        "color":"Grey",
-        "img":"https://cdn2.rcstatic.com/images/car_images/web/fiat/500_convertible_lrg.jpg"
-    },
-    {
-        "id":"5",
-        "name":"Mitsubishi",
-        "model":"Pajero",
-        "year":"2018",
-        "price":"30",
-        "seats":"7",
-        "gear":"Automatic",
-        "color":"Grey",
-        "img":"https://cdn2.rcstatic.com/images/car_images/web/mitsubishi/pajero_4_doors_lrg.jpg"
-    }
+  {
+    "id": "1",
+    "name": "Mercedes",
+    "alt": "Mercedes E-Class 2019 ",
+    "model": "E-Class",
+    "year": "2019",
+    "price": "50",
+    "seats": "4",
+    "gear": "Automatic",
+    "color": "Grey",
+    "img": "https://cdn2.rcstatic.com/images/car_images/web/mercedes/e_class_lrg.jpg"
+  },
+  {
+    "id": "2",
+    "name": "Audi",
+    "alt": "Audi Q5 2020 ",
+    "model": "Q5",
+    "year": "2020",
+    "price": "30",
+    "seats": "5",
+    "gear": "Automatic",
+    "color": "Grey",
+    "img": "https://cdn2.rcstatic.com/images/car_images/web/audi/q5_lrg.jpg"
+  },
+  {
+    "id": "3",
+    "name": "Toyota",
+    "alt": "Toyota Land Cruisere 2018 ",
+    "model": "Land Cruisere",
+    "year": "2018",
+    "price": "20",
+    "seats": "7",
+    "gear": "Automatic",
+    "color": "Black",
+    "img": "https://cdn2.rcstatic.com/images/car_images/new_images/land_rover/discovery_lrg.jpg"
+  },
+  {
+    "id": "4",
+    "name": "Fiat",
+    "alt": " Fiat Cabrio 2015 ",
+    "model": "Cabrio",
+    "year": "2015",
+    "price": "10",
+    "seats": "4",
+    "gear": "Manual",
+    "color": "Grey",
+    "img": "https://cdn2.rcstatic.com/images/car_images/web/fiat/500_convertible_lrg.jpg"
+  },
+  {
+    "id": "5",
+    "name": "Mitsubishi",
+    "alt": " Mitsubishi Pajero 2018 ",
+    "model": "Pajero",
+    "year": "2018",
+    "price": "30",
+    "seats": "7",
+    "gear": "Automatic",
+    "color": "Grey",
+    "img": "https://cdn2.rcstatic.com/images/car_images/web/mitsubishi/pajero_4_doors_lrg.jpg"
+  },
+  {
+    "id": "6",
+    "name": "Audi",
+    "alt": " Audi A3 2020 ",
+    "model": "A3    ",
+    "year": "2020",
+    "price": "70",
+    "seats": "5",
+    "gear": "Automatic",
+    "color": "White",
+    "img": "https://cdn2.rcstatic.com/images/car_images/new_images/audi/a3_4door_lrg.jpg"
+  },
+  {
+    "id": "7",
+    "name": "Toyota",
+    "alt": " Toyota Corolla 2021 ",
+    "model": "Corolla    ",
+    "year": "2021",
+    "price": "70",
+    "seats": "5",
+    "gear": "Automatic",
+    "color": "Selver",
+    "img": "https://cdn2.rcstatic.com/images/car_images/new_images/toyota/corolla_hatch_lrg.jpg"
+  }
 ]
