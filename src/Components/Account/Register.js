@@ -1,26 +1,26 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import adminPic from "../../Assets/accounts-assets/admin.png";
 import { countries } from "../Checkout/countries";
 import "./accounts.css";
 import Hero from "../Hero/Hero";
 
-export class Register extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      fname: "",
-      lname: "",
-      country:"",
-      phone:"",
-      img: "",
-      email: "",
-      password: "",
-      role: "user",
-    };
-  }
+let fnameValid, lnameValid, emailValid, passwordValid, repasswordValid;
 
-  handleSubmit = (e) => {
+function Register() {
+  let navigate = useNavigate()
+
+
+const [fname, setFname] = useState("")
+const [lname, setlname] = useState("")
+const [country, setcountry] = useState("")
+const [phone, setphone] = useState("")
+const [img, setimg] = useState("")
+const [email, setemail] = useState("")
+const [password, setpassword] = useState("")
+const [role, setrole] = useState("user")
+
+  const handleSubmit = (e) => {
     if (
       fnameValid &&
       lnameValid &&
@@ -30,14 +30,14 @@ export class Register extends Component {
     ) {
       //create user in localStorage
       let user = {
-        fname: this.state.fname,
-        lname: this.state.lname,
-        country: this.state.country,
-        phone: this.state.phone,
-        img: this.state.img,
-        email: this.state.email,
-        password: this.state.password,
-        role: this.state.role,
+        fname: fname,
+        lname: lname,
+        country: country,
+        phone: phone,
+        img: img,
+        email: email,
+        password: password,
+        role: role,
       };
       if (!localStorage.getItem("users")) {
         let users = [];
@@ -59,7 +59,7 @@ export class Register extends Component {
         let foundEmail = false;
         let myUsers = JSON.parse(localStorage.getItem("users"));
         for (let i = 0; i < myUsers.length; i++) {
-          if (myUsers[i].email === this.state.email) {
+          if (myUsers[i].email === email) {
             foundEmail = true;
             break;
           }
@@ -70,6 +70,7 @@ export class Register extends Component {
         } else {
           myUsers.push(user);
           localStorage.setItem("users", JSON.stringify(myUsers));
+          navigate('/login');
         }
       }
     } else {
@@ -77,16 +78,16 @@ export class Register extends Component {
       alert("Edit Data!!!!");
     }
   };
-  validator = (e) => {
+  const validator = (e) => {
     switch (e.target.id) {
       case "fname":
         if (e.target.value.length >= 3) {
           fnameValid = true;
-          this.setState({ fname: e.target.value });
+          setFname(e.target.value)
           document.getElementById("RU-fname").innerText = "";
         } else {
           fnameValid = false;
-          this.setState({ fname: "" });
+          setFname("")
           document.getElementById(
             "RU-fname"
           ).innerHTML = `<i class="fas fa-times"></i> First name must be longer than 3 characters`;
@@ -96,11 +97,11 @@ export class Register extends Component {
       case "lname":
         if (e.target.value.length >= 3) {
           lnameValid = true;
-          this.setState({ lname: e.target.value });
+          setlname(e.target.value)
           document.getElementById("RU-lname").innerText = "";
         } else {
           lnameValid = false;
-          this.setState({ lname: "" });
+          setlname("")
           document.getElementById(
             "RU-lname"
           ).innerHTML = `<i class="fas fa-times"></i> Last name must be longer than 3 characters`;
@@ -108,30 +109,30 @@ export class Register extends Component {
         break;
 
       case "country":
-        this.setState({country:e.target.value})
+        setcountry(e.target.value)
         break;
       
       case "phone":
-        this.setState({phone:e.target.validator})
+        setphone(e.target.value)
         break;
 
       case "img-url":
-        this.setState({ img: e.target.value });
+        setimg(e.target.value)
         break;
 
       case "email":
         emailValid = true;
-        this.setState({ email: e.target.value });
+        setemail(e.target.value)
         break;
 
       case "password":
         if (e.target.value.length > 5) {
           passwordValid = true;
-          this.setState({ password: e.target.value });
+          setpassword(e.target.value)
           document.getElementById("RU-password").innerText = "";
         } else {
           passwordValid = false;
-          this.setState({ password: "" });
+          setpassword("")
           document.getElementById(
             "RU-password"
           ).innerHTML = `<i class="fas fa-times"></i> Password must be longer than 5 characters`;
@@ -139,7 +140,7 @@ export class Register extends Component {
         break;
 
       case "repassword":
-        if (e.target.value === this.state.password) {
+        if (e.target.value === password) {
           repasswordValid = true;
           document.getElementById("RU-repassword").innerText = "";
         } else {
@@ -151,18 +152,18 @@ export class Register extends Component {
         break;
 
       default:
-        alert("Impossible Error");
+        alert("Check id in register file");
     }
   };
-  render() {
-    return (
-      <>
+
+  return (
+    <>
       <Hero title="Register Page"/>
       <div id="accounts-form-container">
         <div>
         <h1>Register</h1>
         <fieldset id="register-fieldset">
-          <form action="/" id="register-form" onSubmit={this.handleSubmit}>
+          <form action="/" id="register-form" onSubmit={handleSubmit}>
             <div>
               <label htmlFor="fname">
                 First Name : <span className="accounts-important">*</span>{" "}
@@ -172,7 +173,7 @@ export class Register extends Component {
                 type="text"
                 id="fname"
                 placeholder="Zaid"
-                onChange={this.validator}
+                onChange={validator}
                 required
               />
               <p className="error" id="RU-fname"></p>
@@ -186,7 +187,7 @@ export class Register extends Component {
                 type="text"
                 id="lname"
                 placeholder="Samamah"
-                onChange={this.validator}
+                onChange={validator}
                 required
               />
               <p className="error" id="RU-lname"></p>
@@ -196,7 +197,7 @@ export class Register extends Component {
                 Country : <span className="accounts-important">*</span>
               </label>
               <br />
-              <select id="country" class="select-register" onChange={this.validator} required>
+              <select id="country" className="select-register" onChange={validator} required>
                 {countries.map((element, i) => {
                   return <option key={i} value={element.name}>{element.name}</option>;
                 })}
@@ -219,7 +220,7 @@ export class Register extends Component {
             <div>
               <label htmlFor="img-url">Profile Image : </label>
               <br />
-              <input type="url" id="img-url" onChange={this.validator} />
+              <input type="url" id="img-url" onChange={validator} />
             </div>
             <div>
               <label htmlFor="email">
@@ -230,7 +231,7 @@ export class Register extends Component {
                 type="email"
                 id="email"
                 placeholder="username@domain.com"
-                onChange={this.validator}
+                onChange={validator}
                 required
               />
             </div>
@@ -243,7 +244,7 @@ export class Register extends Component {
                 type="password"
                 id="password"
                 className="register-first-password"
-                onChange={this.validator}
+                onChange={validator}
                 required
               />
               <p className="error" id="RU-password"></p>
@@ -256,7 +257,7 @@ export class Register extends Component {
               <input
                 type="password"
                 id="repassword"
-                onChange={this.validator}
+                onChange={validator}
                 required
               />
               <p className="error" id="RU-repassword"></p>
@@ -276,8 +277,7 @@ export class Register extends Component {
       </div>
       </div>
       </>
-    );
-  }
+  )
 }
-let fnameValid, lnameValid, emailValid, passwordValid, repasswordValid;
-export default Register;
+
+export default Register

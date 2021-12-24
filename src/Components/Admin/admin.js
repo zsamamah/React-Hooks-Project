@@ -1,16 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import "./admin.css";
 
-export default class Admin extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      // items: JSON.parse(localStorage.getItem("items")),
-    };
-  }
-
-  deleteCard = (index1) => {
+function Admin() {
+  const deleteCard = (index1) => {
     this.deleted = JSON.parse(localStorage.getItem("items"));
     this.deleted.splice(index1, 1);
     localStorage.setItem("items", JSON.stringify(this.deleted));
@@ -18,11 +10,9 @@ export default class Admin extends Component {
       items: JSON.parse(localStorage.getItem("items")),
     });
   };
-
-
-
-  render() {
-
-    return(<p>hahahah</p>)
-  }
+  return (
+    <p>hahahah</p>
+  )
 }
+
+export default Admin

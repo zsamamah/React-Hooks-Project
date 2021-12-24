@@ -1,47 +1,37 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Products from "../Shop/Products";
 import Hero from "../Hero/Hero";
 import './admin.css';
 
-export default class AddField extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: JSON.parse(localStorage.getItem("items")),
-      textarea:""
-    };
+function AddField(props) {
+
+  const [items, setItems] = useState(JSON.parse(localStorage.getItem("items")))
+  const [textarea, settextarea] = useState("")
+
+  const handleTextArea=(e)=>{
+    settextarea(e.target.value)
   }
 
-  handleTextArea=(e)=>{
-    this.setState({textarea:e.target.value})
-  }
-
-  addItem = (e) => {
+  const addItem = (e) => {
     e.preventDefault();
     let cardStorage = [];
-    !localStorage.getItem("items")
-      ? localStorage.setItem("items", JSON.stringify(cardStorage))
-      : (cardStorage = JSON.parse(localStorage.getItem("items")));
-    cardStorage = cardStorage
-      ? cardStorage
-      : JSON.parse(localStorage.getItem("items"));
+    !localStorage.getItem("items")? localStorage.setItem("items", JSON.stringify(cardStorage)) : (cardStorage = JSON.parse(localStorage.getItem("items")));
+    cardStorage = cardStorage ? cardStorage : JSON.parse(localStorage.getItem("items"));
     cardStorage.push({
       itemName: e.target.heading.value,
-      text: this.state.textarea,
+      text: textarea,
       img: e.target.image.value,
       alt: e.target.alt.value,
       price: e.target.price.value,
       id: e.target.id.value,
     });
     localStorage.setItem("items", JSON.stringify(cardStorage));
-    this.props.handleChangeitem()
+    props.handleChangeitem()
   };
-
-  render() {
-    return (
-      <>
+  return (
+    <>
       <Hero title="Add Products"/>
-        <form className="AddForm" onSubmit={this.addItem}>
+        <form className="AddForm" onSubmit={addItem}>
           <input
             required
             type="text"
@@ -53,24 +43,18 @@ export default class AddField extends Component {
             required
             cols="23"
             row="8"
-            name="text" value={this.state.textarea}
-            placeholder="Product Description" onChange={this.handleTextArea}
+            name="text" value={textarea}
+            placeholder="Product Description" onChange={handleTextArea}
             className="btn border-dark"
-
-
-
           />
-          <input required type="url" name="image" placeholder="Image URL" className="btn border-dark"
- />
-          <input required type="text" name="alt" placeholder="Alt for Image" className="btn border-dark"
- />
+          <input required type="url" name="image" placeholder="Image URL" className="btn border-dark"/>
+          <input required type="text" name="alt" placeholder="Alt for Image" className="btn border-dark"/>
           <input
             required
             type="number"
             name="price"
             placeholder="Enter Price"
             className="btn border-dark"
-
           />
           <input
             required
@@ -81,9 +65,9 @@ export default class AddField extends Component {
           />
           <button type="submit" className="btn bg-primary text-white fw-bold">Add Card</button>
         </form>
-        <Products showDelete={true} deleteCard={this.props.deleteCard} items={this.props.items} />
-
+        <Products showDelete={true} deleteCard={props.deleteCard} items={props.items} />
       </>
-    );
-  }
+  )
 }
+
+export default AddField

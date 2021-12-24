@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { Routes as Switch, Route } from "react-router-dom";
 import Checkout from "./Components/Checkout/checkout";
 import Shop from "./Components/Shop/Shop";
@@ -14,47 +14,36 @@ import Navbar from "./Components/NavBar/Navbar";
 import Footer from './Components/Footer/Footer'
 import './App.css'
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoggedIn: JSON.parse(localStorage.getItem("logged_in")),
-      items: JSON.parse(localStorage.getItem("items")),
-    };
-  }
-  handleChangeitem=()=>{
-    this.setState({items:JSON.parse(localStorage.getItem('items'))})
+function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(JSON.parse(localStorage.getItem("logged_in")))
+const [items, setitems] = useState(JSON.parse(localStorage.getItem("items")))
+  const handleChangeitem=()=>{
+    setitems(JSON.parse(localStorage.getItem('items')))
   }
 
-  handleChangeRole = () => {
-    this.setState({
-      isLoggedIn: JSON.parse(localStorage.getItem("logged_in")),
-    });
+  const handleChangeRole = () => {
+    setIsLoggedIn(JSON.parse(localStorage.getItem("logged_in")))
   };
-  deleteCard = (index1) => {
-    this.deleted = JSON.parse(localStorage.getItem("items"));
-    this.deleted.splice(index1, 1);
-    localStorage.setItem("items", JSON.stringify(this.deleted));
-    this.setState({
-      items: JSON.parse(localStorage.getItem("items")),
-    });
+  const deleteCard = (index1) => {
+    let deleted = JSON.parse(localStorage.getItem("items"));
+    deleted.splice(index1, 1);
+    localStorage.setItem("items", JSON.stringify(deleted));
+    setitems(JSON.parse(localStorage.getItem("items")))
   };
-
-  render() {
-        return (
-          <>
-            <Navbar loggedIn={this.state.isLoggedIn}/>
+  return (
+    <>
+            <Navbar loggedIn={isLoggedIn}/>
             <Switch>
             <Route
                 path="/products"
-                element={<AddField items={this.state.items} deleteCard={this.deleteCard} handleChangeitem={this.handleChangeitem}/>}
+                element={<AddField items={items} deleteCard={deleteCard} handleChangeitem={handleChangeitem}/>}
               />
               <Route path="/users" element={<UsersContainer />} />
               <Route path="/orders" element={<Submitted />} />
               <Route path="/" element={<Home />} />
               <Route
                 path="/account"
-                element={<Login handleChangeRole={this.handleChangeRole} />}
+                element={<Login handleChangeRole={handleChangeRole} />}
               />
               <Route path="/register" element={<Register />} />
               <Route path="/cart" element={<Cart />} />
@@ -64,8 +53,7 @@ class App extends React.Component {
             </Switch>
             <Footer/>
           </>
-        );
-  }
+  )
 }
 
-export default App;
+export default App
