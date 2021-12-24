@@ -28,7 +28,7 @@ export default function Checkout (){
     }
 
     handlePayment= (e)=>{
-        const {name,value}=e.target;
+        const {value}=e.target;
         if( value==="cash"){
             setUserData((prev)=>{
                 return {...prev,cashMsg1:"flex",cashMsg2:'none'}
@@ -96,17 +96,6 @@ export default function Checkout (){
            <Hero title="Checkout Page"/>
             <div className="empty-container">
             <div>Your order is submitted, it will be delivered within 2 to three weeks!</div>
-            <div className="checkout-orderDetails">
-                <ul>
-                    {/* {()=>{
-                        for(let prop of this.checkoutInfo){
-                            return (
-                                <li>{prop}</li>
-                            )
-                        }
-                    }} */}
-                </ul>
-            </div>
             <Link to="/shop">
               <button className="table-button3">continue shopping</button>
             </Link>
