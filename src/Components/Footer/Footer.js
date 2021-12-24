@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import './footer.css'
 
-export class Footer extends Component {
-    render() {
-        return (
-            <footer id="footer">
+export default function Footer() {
+  return (
+      <div>
+
+<footer id="footer">
     <div className="social_media">
       <ul>
         <li>
@@ -42,8 +43,8 @@ export class Footer extends Component {
     </div>
     <div className="rights"><p> React Group 4 &copy; 2021</p></div>
   </footer>
-        )
-    }
+        
+        
+      </div>
+  )
 }
-
-export default Footer
