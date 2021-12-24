@@ -13,7 +13,7 @@ function Login(props) {
   const [login_email, setlogin_email] = useState("")
   const [login_password, setlogin_password] = useState("")
   const [remember, setremember] = useState(false)
-  const [fname, setfname] = useState(logged_user.fanme)
+  const [fname, setfname] = useState(logged_user.fname)
   const [lname, setlname] = useState(logged_user.lname)
   const [image_url, setimage_url] = useState(logged_user.img)
   const [logged, setlogged] = useState("")
@@ -36,7 +36,7 @@ function Login(props) {
       let user=registerd_users[index]
       user['remember']=remember
       localStorage.setItem("logged_in",JSON.stringify(user));
-      this.logged_user=JSON.parse(localStorage.getItem('logged_in'))
+       const logged_user=JSON.parse(localStorage.getItem('logged_in'))
         props.handleChangeRole();
         await setlogged(JSON.parse(localStorage.getItem('logged_in')))
     }
@@ -78,7 +78,7 @@ const changeData=()=>{
 }
 const logout = () => {
     localStorage.removeItem("logged_in");
-    setloggedUSer(null)
+    // setloggedUSer(null)
     props.handleChangeRole();
 }
 const badImage = (e)=>{
