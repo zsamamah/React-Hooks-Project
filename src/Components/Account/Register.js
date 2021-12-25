@@ -163,12 +163,13 @@ const [role, setrole] = useState("user")
         <div>
         <h1>Register</h1>
         <fieldset id="register-fieldset">
-          <form action="/" id="register-form" onSubmit={handleSubmit}>
-            <div>
+            <form action="/" onSubmit={handleSubmit}>
+              <div id="register-form">
+            <div className="formGroupRegisterMahdi">
               <label htmlFor="fname">
                 First Name : <span className="accounts-important">*</span>{" "}
               </label>
-              <br />
+              
               <input
                 type="text"
                 id="fname"
@@ -178,11 +179,10 @@ const [role, setrole] = useState("user")
               />
               <p className="error" id="RU-fname"></p>
             </div>
-            <div>
+            <div className="formGroupRegisterMahdi">
               <label htmlFor="lname">
                 Last Name : <span className="accounts-important">*</span>{" "}
               </label>
-              <br />
               <input
                 type="text"
                 id="lname"
@@ -192,22 +192,21 @@ const [role, setrole] = useState("user")
               />
               <p className="error" id="RU-lname"></p>
             </div>
-            <div>
+            <div className="formGroupRegisterMahdi">
               <label htmlFor="country">
                 Country : <span className="accounts-important">*</span>
               </label>
-              <br />
               <select id="country" className="select-register" onChange={validator} required>
                 {countries.map((element, i) => {
                   return <option key={i} value={element.name}>{element.name}</option>;
                 })}
               </select>
             </div>
-            <div>
+            <div className="formGroupRegisterMahdi">
               <label htmlFor="phone">
                 Phone Number : <span className="accounts-important">*</span>
               </label>
-              <br />
+              
               <input
                 type="tel"
                 minLength="10"
@@ -217,16 +216,16 @@ const [role, setrole] = useState("user")
                 required
               />
             </div>
-            <div>
+            <div className="formGroupRegisterMahdi">
               <label htmlFor="img-url">Profile Image : </label>
-              <br />
+              
               <input type="url" id="img-url" onChange={validator} />
             </div>
-            <div>
+            <div className="formGroupRegisterMahdi">
               <label htmlFor="email">
                 Email Address : <span className="accounts-important">*</span>
               </label>
-              <br />
+              
               <input
                 type="email"
                 id="email"
@@ -235,11 +234,11 @@ const [role, setrole] = useState("user")
                 required
               />
             </div>
-            <div>
+            <div className="formGroupRegisterMahdi">
               <label htmlFor="password">
                 Password : <span className="accounts-important">*</span>
               </label>
-              <br />
+              
               <input
                 type="password"
                 id="password"
@@ -249,11 +248,11 @@ const [role, setrole] = useState("user")
               />
               <p className="error" id="RU-password"></p>
             </div>
-            <div>
+            <div className="formGroupRegisterMahdi">
               <label htmlFor="repassword">
                 Repeat Password : <span className="accounts-important">*</span>
               </label>
-              <br />
+              
               <input
                 type="password"
                 id="repassword"
@@ -262,16 +261,16 @@ const [role, setrole] = useState("user")
               />
               <p className="error" id="RU-repassword"></p>
             </div>
-            <div>
+            
+              </div>
+              <div className="formGroupRegisterMahdi">
               <button type="submit" className="accounts-form-btn">
                 Register
               </button>
-              <br />
-              <br/>
-              <Link to="/account">
+              <Link to="/account" id="redirect-to-login-mahdi">
               Already Have an account? Sign in here!
           </Link>
-            </div>
+                </div>
           </form>
         </fieldset>
       </div>

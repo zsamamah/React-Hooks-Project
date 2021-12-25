@@ -17,6 +17,9 @@ body {
   width: 40vw;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   
 }
 fieldset a {
@@ -33,6 +36,10 @@ fieldset a {
 .login-container {
   max-width: 40em;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 #login_email,#login_password {
   width: 100%;
@@ -53,12 +60,14 @@ fieldset a {
 .accounts-form-btn {
   border: none;
   display: block;
-  margin-bottom: 0.5em;
+  /* margin-bottom: 0.5em; */
   border-radius: 0.5em;
   font-size: 1.2em;
   padding: 0.5em 2em;
   color: white;
-  background-color: rgb(3, 169, 244);
+  background-color: var(--p_green);
+  margin: 0.5em;
+  width: 20%;
 }
 .error {
   color: red;
@@ -78,10 +87,27 @@ fieldset a {
   width: 80%;
   padding: 0.8em;
 }
+#login-form input{
+  border: none;
+  border: 2px solid var(--p_light);
+}
+#login-form input:focus{
+  outline: 1px solid var(--p_light);
+}
+
+#register-fieldset input ,#register-fieldset select{
+  border: none;
+  border: 1px solid var(--p_light);
+  border-radius: 0.2em;
+}
+#register-fieldset input:focus{
+  outline: 1px solid var(--p_light);
+}
+
 #logoutBtn {
   border: none;
   border-radius: 0.5em;
-  padding: 1em;
+  padding: 0.6em 1em;
   font-weight: bold;
   color: white;
   background-color: rgb(223, 9, 9);
@@ -111,8 +137,12 @@ fieldset a {
   gap: 1em;
 }
 #account-editData {
-  background-color: white;
-  padding: 2em;
+  background-color: transparent;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 #account-email-rule {
   margin-top: 0;
@@ -134,19 +164,54 @@ fieldset a {
   padding: 0.5em;
   font-size: 1em;
   color: white;
-  background-color: rgb(3, 169, 244);
+  background-color: var(--p_green);
+  width: 20%;
 }
 #accounts-form-container{
-  padding: 1.5em;
+  padding: 1em 0;
 }
 .select-register,.register-first-password{
   display: block;
 }
-#account-editData{
-  display: flex;
-  justify-content: space-around;
+
+.btn-login button{
+  width: 100%;
+  margin: 0 auto;
+  background-color: var(--p_green);
 }
-@media only screen and (max-width: 490px) {
+.btn-login button:hover{
+  background-color: var(--p_light);
+}
+.a-login {
+  text-align: center;
+  color: var(--p_light);
+
+}
+
+#redirect-to-login-mahdi{
+  color: var(--p_light);
+}
+
+.formGroupRegisterMahdi{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0.2em 0;
+  gap: 0.5em;
+}
+#changeData-form div input{
+  border: none;
+  border: 1px solid var(--p_light);
+  border-radius: 0.2em;
+  width: 100%;
+}
+
+#changeData-form div input:focus{
+  outline: 1px solid var(--p_light);
+}
+
+@media only screen and (max-width: 480px) {
   #remember-me-container {
     width: none;
     flex-direction: column;
@@ -155,13 +220,12 @@ fieldset a {
   #register-form {
     grid-template-columns: 1fr;
   }
-}
-@media only screen and (max-width: 490px) {
   #remember-me-container {
     width: 100%;
   }
-  .btn-login {
+  .btn-login button {
     margin: 0 auto;
+    /* width: 50%; */
   }
   .a-login {
     text-align: center;
@@ -178,19 +242,36 @@ fieldset a {
   .dataContainer{
     align-items: center;
   }
-  /* #changeData-form{
-    gap: 0;
-    column-gap: 0;
-  } */
-  #changeData-form > div > br{
-    display: none;
-  }
+
+
   #changeData-form div{
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
   }
+  #changeData-form div input{
+    border-radius: 0.2em;
+    width: 100%;
+  }
+
+
+  #changeData-form div label{
+    align-self: flex-start;
+  }
+  .formGroupRegisterMahdi{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #changeData-form button {
+    width: 100%;
+  }
+.accounts-form-btn {
+  width: 82%;
+}
+
 }
 @media only screen and (max-width: 600px){
  #userProfile{
@@ -209,9 +290,7 @@ fieldset a {
   #changeData-form input{
     width: 40vw;
   }
-  .Weather{
-    width: 60vw;
-}
+
 #changeData-form div{
   display: flex;
   flex-direction: column;

@@ -107,8 +107,7 @@ const badImage = (e)=>{
           <form id="login-form" onSubmit={handleSubmit} action={localStorage.getItem("redirectTo")?'/checkout':'/'}>
             <div>
               <label htmlFor="login_email">
-                Email Address
-                <span className="accounts-important">*</span>
+                Email Address <span className="accounts-important">*</span>
               </label>
               <br />
               <input type="email" id="login_email" onChange={handleChange} required />
@@ -120,11 +119,13 @@ const badImage = (e)=>{
               <br />
               <input type="password" id="login_password" onChange={handleChange} required />
             </div>
-            <div id="remember-me-container">
-              <div className="btn-login"><button type="submit" className="accounts-form-btn">Log in</button></div>
-              
-            </div>
-            <div  className="a-login">
+            {/* <div id="remember-me-container"> */}
+                <div className="btn-login">
+                  <button type="submit" className="accounts-form-btn">Log in</button>
+                </div>
+
+            {/* </div> */}
+            <div className="a-login">
         <Link to="/register" className="a-login">Don't have an account? Signup here!</Link>
         </div>
           </form>
@@ -139,7 +140,7 @@ const badImage = (e)=>{
           <>
           <Hero title="Account Page"/>
           <div id="accounts-form-container">
-          <div>
+          {/* <div> */}
             <fieldset id="profileContainer">
                 <div id="userProfile">
                     <div>
@@ -155,7 +156,7 @@ const badImage = (e)=>{
             </div>
             </fieldset>
             <br/>
-            <div className="account-weather">
+            {/* <div className="account-weather"> */}
             <div id="account-editData">
             <form id="changeData-form" onSubmit={changeData}>
                 <div>
@@ -179,11 +180,10 @@ const badImage = (e)=>{
                     <button type="submit">Submit !</button>
                 </div>
             </form>
-            <Weather/>
             </div>
             </div>
-            </div>
-            </div>
+            {/* </div> */}
+            {/* </div> */}
             </>
         )
     }
