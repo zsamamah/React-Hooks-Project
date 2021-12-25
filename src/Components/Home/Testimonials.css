@@ -1,46 +1,65 @@
 
 .home-heading {
   text-align: center;
-  font-size: 4em;
+  font-size: 2.5em !important;
   font-weight: bold;
+  color: var(--p_green);
 }
 .testimonials-p {
   font-size: 1.4em;
 }
 .people {
-  width: 30%;
-  color: black;
-  background-color: white;
-  margin: 0.5em;
+  width: 40%;
+  color: var(--body_text);
+  background-image: linear-gradient(to right, var(--p_light) , var(--s_dark));
+  /* margin: 0.5em; */
   align-items: center;
   box-shadow: 20em rgba(0, 0, 0, 0.1);
   text-align: center;
-  height:50vh;
-  padding: 0.5em;
+  /* height:50vh; */
+  /* padding: 0.5em; */
   margin: 2em;
-  box-shadow:  0.2em 0.2em 1em 0.2em grey;
+  box-shadow:  0em 1em 2em 0em rgba(128, 128, 128, 0.514);
   border-radius: 0.6em;
 }
-.people img {
-  width: 50%;
+.people .img {
+  width: 120px;
   border-radius: 50%;
-  padding: 0.5em;
-  height: 25vh;
+  /* padding: 0.5em; */
+  height: 120px;
+  position: relative;
+  top: -3em;
 
 }
 .people h4 {
   padding: 0.5em;
-  font-size: 1.6em;
+  font-size: 1.8em;
+  margin-top: 0.5em;
+}
+.testimonialsLowerDiv{
+  background-color: rgba(255, 255, 255, 0.932);
+  padding: 0;
+  margin: 0;
+  box-shadow:  0em 0em 1em 0em grey;
+  border-radius: 0 0 0.6em 0.6em  ;
+  height: 9em;
+}
+.star{
+  position: relative;
+  top: -2em;
 }
 .testimonials {
-  width: 80%;
+  align-items: stretch;
+  width: 85%;
   display: flex;
   justify-content: center;
   margin: 0 auto;
 }
 
 .testimonials-p {
-  font-size: 0.9em;
+  font-size: 0.8em;
+  margin: 0.8em;
+  line-height: 2;
 }
 
 
@@ -61,7 +80,7 @@
 }
 @media screen and (max-width: 940px) {
   .people {
-    height: 40vh;
+    /* height: 40vh; */
   }
   .testimonials-p {
     font-size: 0.6em;
@@ -81,8 +100,8 @@
   .people {
     width: 100%;
   }
-  .people img {
-    height: 15vh;
+  .people .img {
+    /* height: 15vh; */
     width: 35%;
   }
   .testimonials-p {
@@ -92,7 +111,7 @@
 }
 @media screen and (max-width: 768px) {
   .home-heading {
-    font-size: 3em;
+    font-size: 2em !important;
   }
 }
 @media screen and (max-width: 450px) {
@@ -101,7 +120,7 @@
     width: 70%;
   }
   .home-heading {
-    font-size: 2em;
+    font-size: 2em !important;
     width : 90%;
   }
 }

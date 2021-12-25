@@ -15,7 +15,6 @@ export default function Home (){
                 <Slider />
                 <Testimonial />
                 <Team />
-                <Youtube />
             </div>
         )
     }

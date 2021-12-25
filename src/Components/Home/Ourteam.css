@@ -1,10 +1,10 @@
 .ourteam-container {
   margin: 3em 0;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
 }
-.members a {
+.rightC a,.leftC a {
   font-size: 1.5em;
   text-decoration: none;
 }
@@ -14,18 +14,22 @@
   flex-direction: column;
   align-items: center;
 }
-.members {
+.rightC,.leftC{
+  display: flex;
   color: black;
   background-color: white;
   box-shadow: 20em rgba(0, 0, 0, 0.1);
   text-align: center;
-  align-items: center;
-  width: 89%;
+  width: 35%;
   box-shadow:  0.2em 0.2em 1em 0.2em grey;
   border-radius: 0.6em;
+  align-items: stretch;
 }
-
-.members > h4 {
+.colNum2{
+  background-color: white;
+  margin: 0 auto;
+}
+.rightC h4,.leftC h4 {
   padding: 0.5em;
   font-size: 1em;
 }
@@ -33,8 +37,10 @@
   box-shadow: 20em rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  width: 95%;
+  justify-content: space-evenly;
+  /* width: 95%; */
+  flex-wrap: wrap;
+  row-gap: 2em;
 }
 #contactIcon {
   color: #808080;
@@ -44,38 +50,51 @@
 #contactIcon:hover {
   color: #03a9f4;
 }
-   @media  (max-width: 767px){
+.rightC{
+  flex-direction: row-reverse;
+}
+.leftC img{
+  width: 10em ;
+  border-radius: 1em  0 0 1em ;
+}
+.rightC img{
+  width: 10em ;
+  border-radius: 0em  1em 1em 0em 
+}
+   /* @media  (max-width: 767px){
   
     h2 {
       font-size: 1em;
     }
     .ourteam-container{
-      flex-direction: column;
-      align-items: center;
+      /* flex-direction: column; */
+      /* align-items: center;
     }
     
-
+    .leftC img,.rightC .leftCimg{
+      width: 10em !important;
+    }
     .memberContainer{
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      /* flex-direction: column; */
+      /* align-items: center;
       margin: 1em 0;
 
     }
     
   }
   @media (min-width:768px){
-    .memberContainer{
-      display: grid;
-      grid-template-columns: repeat(2,1fr);
-      grid-gap:1em;
-    }
+    .memberContainer{ */
+      /* display: grid; */
+      /* grid-template-columns: repeat(2,1fr); */
+      /* grid-gap:1em; */
+    /* } */
     
-  }
-  @media (min-width:1024px){
-    .memberContainer{
-      display: grid;
-      grid-template-columns: repeat(5,1fr);
-      grid-gap:1em;
+  /* } */
+  /* @media (min-width:1024px){
+    .memberContainer{ */
+      /* display: grid; */
+      /* grid-template-columns: repeat(5,1fr); */
+      /* grid-gap:1em;
     }
-  }
+  }  */ 

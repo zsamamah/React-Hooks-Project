@@ -2,30 +2,36 @@ body {
   background-color: whitesmoke;
 }
 nav.navbar.noTransparrent {
-  background-color: #ffffff;
-  color: black;
-  border-bottom: 1px solid #eee;
+  background-color: var(--p_green);
+  color: var(--p_light);
+  /* border-bottom: 1px solid #eee; */
+  color: var(--s_light);
+  box-shadow: rgba(0, 0, 0, 0.781) 1px 1px 8px;
 }
-
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
+  color: white;
+}
 #custom-ul{
   width: 50%;
   display: flex;
   justify-content: space-around;
 }
 .navbar-brand img {
-  width: 2em;
+  width: 3em;
+  border-radius: 4em;
+  background-color: #ffffff;
 }
 .nav-link {
   color: white;
 }
 .nav-link:hover{
-      color: orange !important;
+      color: var(--s_teal) !important;
 }
 #casting-color {
-  color: black;
+  color: white;
 }
 .navbar-light .navbar-nav .nav-link {
-      color: rgba(0, 0, 0, 0.664);
+  color: white;
   }
 
   @media only screen and (max-width: 450px){

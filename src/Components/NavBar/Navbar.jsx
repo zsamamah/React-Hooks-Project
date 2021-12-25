@@ -2,7 +2,7 @@ import {  Link } from "react-router-dom";
 import React,{useState,useEffect} from "react";
 import "./NavBar.css";
 import $ from "jquery";
-import logo from "../../logo.png";
+import logo from "../../logoNav2.png";
 
 function Navbar (props){
   const [state,setState]=useState({loggedin: localStorage.getItem("logged_in"),})
