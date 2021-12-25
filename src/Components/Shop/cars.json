@@ -80,7 +80,55 @@
     "price": "25",
     "seats": "5",
     "gear": "Automatic",
-    "color": "Selver",
+    "color": "Silver",
     "img": "https://cdn2.rcstatic.com/images/car_images/new_images/toyota/corolla_hatch_lrg.jpg"
+  },
+  {
+    "id": "8",
+    "name": "Mercedes",
+    "alt": " Mercedes Benz G-Class 2020 ",
+    "model": "Benz G-Class    ",
+    "year": "2020",
+    "price": "90",
+    "seats": "7",
+    "gear": "Automatic",
+    "color": "Red",
+    "img": "https://imgd.aeplcdn.com/664x374/cw/ec/36129/MercedesBenz-GClass-Exterior-137816.jpg?v=20181910123857&wm=0&q=85"
+  },
+  {
+    "id": "9",
+    "name": "Audi",
+    "alt": " Audi Q2 2018 ",
+    "model": "Q2   ",
+    "year": "2018",
+    "price": "53",
+    "seats": "5",
+    "gear": "Automatic",
+    "color": "Red",
+    "img": "https://imgd.aeplcdn.com/227x128/n/cw/ec/22801/q2-exterior-right-front-three-quarter-70077.jpeg?q=85"
+  },
+  {
+    "id": "10",
+    "name": "Fiat",
+    "alt": " Fiat Spot Car 2017 ",
+    "model": "124   ",
+    "year": "2017",
+    "price": "74",
+    "seats": "5",
+    "gear": "Automatic",
+    "color": "Black",
+    "img": "https://crdms.images.consumerreports.org/c_lfill,w_270,q_auto,f_auto/prod/cars/cr/car-versions/2984-2017-fiat-124-lusso"
+  },
+  {
+    "id": "11",
+    "name": "Mitsubishi",
+    "alt": " Mitsubishi ASX 2017 ",
+    "model": "ASX   ",
+    "year": "2017",
+    "price": "66",
+    "seats": "7",
+    "gear": "Automatic",
+    "color": "Blue",
+    "img": "https://carsguide-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto,t_cg_hero_low/v1/editorial/vhs/Mitsubishi-ASX_0.png"
   }
 ]
