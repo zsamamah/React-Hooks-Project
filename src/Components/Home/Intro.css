@@ -15,30 +15,40 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 .Home {
-  background-image: url("../../Assets/background_image/Back.png");
+  background-image: url("../../Assets/background_image/banner-bg.jpg");
   margin: 0 auto;
-  text-align: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+}
+.overlay{
+  margin: 0 auto;
+  text-align: center;
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
   display: flex;
   align-items: center;
   width: 100%;
+  background-color: rgba(0, 0, 0, 0.192);
 }
-
 
 
 
 .intro-text {
-  color: orange;
+  color: var(--s_teal);
+  text-shadow: #fff;
 }
 .intro-h {
-  color: #03a9f4;
+  color: var(--s_teal);
   font-size: 3.5em;
+  text-shadow: rgba(2, 2, 2, 0.952) 1px 1px 5px;
+
 }
 
 .intro-p {
-  color: #fff;
+  color: var(--body_text);
   font-size: 1.5em;
   animation-duration: 3s;
   padding: 10px;
@@ -60,7 +70,7 @@ body {
 .main {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   width: 70%;
   height: 40%;
   justify-content: space-around;
@@ -70,8 +80,8 @@ body {
 .intro-button {
   padding: 0.5em 1em;
   border-radius: 1.5em;
-  background-color: orange;
-  color: white;
+  background-color: var(--p_light);
+  color: var(--body_text);
   font-weight: bold;
   width: fit-content;
   box-shadow: darkblue;
@@ -79,8 +89,9 @@ body {
 }
 
 .intro-button:hover {
-  background-color: whitesmoke;
-  color: #292c6d;
+  background-color: var(--s_light);
+  color: var(--p_dark);
+  transition: background-color 400ms linear;
 }
 @media screen and (max-width: 450px) {
   .main {
@@ -88,7 +99,7 @@ body {
     width: 100%;
   }
   .intro-h {
-    font-size: 3em;
+    font-size: 2em;
   }
   .intro-p {
     font-size: 0.9em;

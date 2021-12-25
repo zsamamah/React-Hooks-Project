@@ -7,6 +7,9 @@ body {
   font-family: "Vidaloka", serif;
   font-family: "Vollkorn", serif;
 }
+.text-black{
+  color: var(--p_green) !important;
+}
 .client {
   /* margin:4em 0; */
   width: 100%;
@@ -51,7 +54,7 @@ body {
 }
 
 .text-warning{
-  color : #ff9500 !important;
+  color : var(--p_light) !important;
 }
 @media screen and (max-width: 450px) {
   .client {
