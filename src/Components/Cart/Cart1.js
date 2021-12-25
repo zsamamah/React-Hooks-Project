@@ -133,7 +133,7 @@ function Cart1() {
           </p>
           <p>{cars[carId-1].price}$ Per day</p>
         </div>
-      <div>
+      <div id="reservedIn">
           <h2>Reserved In : </h2>
         {reserved &&
           reserved.map((el, index) => {

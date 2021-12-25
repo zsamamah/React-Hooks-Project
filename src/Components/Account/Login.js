@@ -160,7 +160,6 @@ const badImage = (e)=>{
           <>
           <Hero title="Account Page"/>
           <div id="accounts-form-container">
-          {/* <div> */}
             <div id="profileContainer">
                 <div id="userProfile">
                 <div><img src={logged_user.img} alt="user Profile" onError={badImage}/></div>
@@ -174,36 +173,13 @@ const badImage = (e)=>{
             </div>
             </div>
             <br/>
-            {/* <div className="account-weather"> */}
-            <div id="account-editData">
-            <form id="changeData-form" onSubmit={changeData}>
-                <div>
-                <label htmlFor="fname">First Name: <span className="accounts-important">*</span></label><br/>
-                <input type="text" id="fname" value={fname} onChange={handleChange}/>
-                </div>
-                <div>
-                <label htmlFor="lname">Last Name: <span className="accounts-important">*</span></label><br/>
-                <input type="text" id="lname" value={lname} onChange={handleChange}/>
-                </div>
-                <div>
-                    <label htmlFor="image_url">Image Url</label><br/>
-                    <input type="url" id="image_url" onChange={handleChange}/>
-                </div>
-                <div>
-                <label htmlFor="email">Email Address : <span className="accounts-important">*</span></label><br/>
-                <input type="text" id="email" value={logged_user.email} disabled/>
-                <p className="error" id="account-email-rule"><i className="fas fa-times"></i> You can`t edit Email !</p>
-                </div>
-                <div>
-                    <button type="submit">Submit !</button>
-                </div>
-            </form>
-            </div>
-
+          <div id="accountCarsWrapperMahdi">
           {orders&&orders.map((order,index)=>{
             return (
-              <div>
+              <div id="selected_car_account">
+                <div>
                 <img src={cars[order.carID-1].img} alt="my car" />
+                </div>
                 <p>Car : {cars[order.carID-1].name} {cars[order.carID-1].model} - {cars[order.carID-1].year}</p>
                 <p>Pickup Duration : {order.pickup_Duration}</p>
                 <p>Pickup Time : {order.pickup_time}</p>
@@ -211,12 +187,8 @@ const badImage = (e)=>{
               </div>
             )
           })}
-
-
-
+          </div>
             </div>
-            {/* </div> */}
-            {/* </div> */}
             </>
         )
     }
