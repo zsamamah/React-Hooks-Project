@@ -11,7 +11,7 @@ export function Slider () {
         <div class="container">
           <div class="row text-center">
             <div class="col-12 text-center">
-              <h1 class="display-3 fw-bold text-black">Featured Products</h1>
+              <h1 class="display-3 fw-bold text-black home-heading ">Featured Products</h1>
               <hr
                 class="bg-white mb-4 mt-0 d-inline-block mx-auto"
                 style={{ width: "100px", height: "3px" }}

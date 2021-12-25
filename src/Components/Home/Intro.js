@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 function Intro() {
     return (
       <section className="Home">
+         <div className="overlay">
         <div className="main">
           <h1 class="intro-h">Platinum store</h1>
           <p class="intro-p">
@@ -13,6 +14,7 @@ function Intro() {
           <Link to="/shop">
             <button className="intro-button">Shop Now</button>
           </Link>
+        </div>
         </div>
       </section>
     );
