@@ -162,7 +162,7 @@ const [role, setrole] = useState("user")
       <Hero title="Register Page"/>
       <div id="accounts-form-container">
         <div>
-        <h1>Register</h1>
+        <h1 id="register_heading">Register</h1>
         <fieldset id="register-fieldset">
             <form onSubmit={handleSubmit}>
               <div id="register-form">

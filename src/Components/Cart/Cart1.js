@@ -14,6 +14,7 @@ function Cart1() {
   y.setDate(y.getDate() + 7);
   const [carId, setCarId] = useState(localStorage.getItem("selected"));
   const [today, setToday] = useState(x.toISOString().split("T")[0]);
+  const [thisDay, setThisDay] = useState(x.toISOString().split("T")[0]);
   const [maxDay, setMaxDay] = useState(y.toISOString().split("T")[0]);
   const [from_time, setfrom_time] = useState(null);
   const [to_time, setTo_time] = useState(null);
@@ -147,7 +148,7 @@ function Cart1() {
             <input
               id="from_date"
               type="date"
-              min={today}
+              min={x.toISOString().split("T")[0]}
               max={maxDay}
               onChange={handleDate}
               required

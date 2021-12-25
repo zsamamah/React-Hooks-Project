@@ -13,6 +13,7 @@ import Submitted from "./Components/Admin/Submitted";
 import Navbar from "./Components/NavBar/Navbar";
 import AyaNav from './Components/NavBar/AyaNav'
 import Footer from './Components/Footer/Footer';
+import Footer2 from './Components/Footer/Footer2';
 import './App.css';
 
 function App() {
@@ -53,7 +54,7 @@ const [items, setitems] = useState(JSON.parse(localStorage.getItem("items")))
               <Route path="/shop" element={<Shop />} />
               <Route path="*" element={<NotFound />} />
             </Switch>
-            <Footer/>
+            <Footer2/>
           </>
   )
 }

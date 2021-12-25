@@ -23,9 +23,11 @@ function Login(props) {
   
   useEffect(() => {
     let orders = JSON.parse(localStorage.getItem('submittedOrders'));
-    const myOrders = orders.filter((order)=>logged_user.email===order.email)
-    setOrders(myOrders)
-  })
+    if(orders){
+      const myOrders = orders.filter((order)=>logged_user.email===order.email)
+      setOrders(myOrders)
+    }
+  },[])
 
 
   const handleSubmit = async (e)=>{

@@ -86,7 +86,7 @@ export function ProductItem({
           className="shop-card-btn"
           onClick={() => toBook(id)}
         >
-          View Deal
+          View deal
         </button>
       </div>
     </div>

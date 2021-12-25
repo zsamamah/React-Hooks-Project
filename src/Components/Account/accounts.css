@@ -1,7 +1,9 @@
 body {
   background-color: rgba(3, 169, 244, 0.05);
 }
-
+#register_heading{
+  text-align: center;
+}
 .accounts-important {
   font-weight: bold;
   color: red;
