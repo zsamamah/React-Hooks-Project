@@ -125,11 +125,11 @@ function Cart1() {
         <div>
           <img src={cars[carId-1].img} alt="Car" />
         </div>
-        <div>
+        <div id="carDetailsMahdi">
           <p>
             {cars[carId-1].name} {cars[carId-1].model}
           </p>
-          <p>{cars[carId-1].price} Per day</p>
+          <p>{cars[carId-1].price}$ Per day</p>
         </div>
       <div>
           <h2>Reserved In : </h2>
@@ -138,10 +138,10 @@ function Cart1() {
             return <p key={index}>{el}</p>;
           })}
       </div>
-      </div>
-      <form onSubmit={inquire}>
-        <div id="booking_Form">
-          <div>
+      {/* </div> */}
+      <form id="booking_Form" onSubmit={inquire}>
+        {/* <div > */}
+          <div className="formGroup">
             <label htmlFor="from_date">From Beginning of : </label>
             <input
               id="from_date"
@@ -152,8 +152,8 @@ function Cart1() {
               required
             />
           </div>
-          <div>
-            <label htmlFor="to_date">To end of : </label>
+          <div className="formGroup">
+            <label htmlFor="to_date">To the end of : </label>
             <input
               id="to_date"
               type="date"
@@ -162,11 +162,13 @@ function Cart1() {
               required
             />
           </div>
-        </div>
-        <div>
-          <button type="submit">Book Now !</button>
-        </div>
-      </form>
+        {/* </div> */}
+        {/* <div> */}
+          <button type="submit" id="submitButtonMahdi"><span>Book Now !</span></button>
+        {/* </div> */}
+        </form>
+      </div>
+        
     </>
   );
 }
