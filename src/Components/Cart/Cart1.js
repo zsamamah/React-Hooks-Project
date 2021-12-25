@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import cars from "../Shop/cars.json";
+import Image from "../../Assets/cart/cart.png";
 import Hero from "../Hero/Hero";
 import "./cart1.css";
+import './Cart.css'
 import { useNavigate } from "react-router-dom";
 
 function Cart1() {
@@ -68,13 +71,14 @@ function Cart1() {
     let to = new Date(selectedDate2);
     let days = getDaysBetweenDates(from, to);
     let range_dates = [];
-    for (let i = 0; i <= days; i++) {
+    for (let i = 0; i <= days; i++){
       range_dates.push(from.toISOString().split("T")[0]);
       from.setDate(from.getDate() + 1);
     }
 
     if (!localStorage.getItem(`car${carId}`)) {
-      localStorage.setItem(`car${carId}`, JSON.stringify(range_dates));
+    //   localStorage.setItem(`car${carId}`, JSON.stringify(range_dates));
+      localStorage.setItem(`temp`,JSON.stringify(range_dates))
       alert('Done !')
       navigate('/checkout')
     } else {
@@ -89,8 +93,9 @@ function Cart1() {
         }
       }
       if (!found) {
-        reserved_dates.push(selectedDate);
-        localStorage.setItem(`car${carId}`, JSON.stringify(reserved_dates));
+        // reserved_dates.push(selectedDate);
+        // localStorage.setItem(`car${carId}`, JSON.stringify(reserved_dates));
+        localStorage.setItem(`temp`,JSON.stringify(range_dates))
         alert('Done !')
         navigate('/checkout')
       } else {
@@ -99,18 +104,32 @@ function Cart1() {
     }
   };
 
+  if(!localStorage.getItem('selected'))
+  return(
+    <>
+    <Hero title="Cart Page" />
+    <div className="empty-container">
+      <div className="title-cart">Your cart is currently empty</div>
+      <img src={Image} alt="empty cart" className="cart-img" />
+      <Link to="/shop">
+        <button className="table-button3">Back to shopping</button>
+      </Link>
+    </div>
+  </>
+  )
+  else
   return (
     <>
-      <Hero title="Cart1 Page" />
+      <Hero title="Cart Page" />
       <div id="selected_car">
         <div>
-          <img src={cars[carId].img} alt="Car" />
+          <img src={cars[carId-1].img} alt="Car" />
         </div>
         <div>
           <p>
-            {cars[carId].name} {cars[carId].model}
+            {cars[carId-1].name} {cars[carId-1].model}
           </p>
-          <p>{cars[carId].price} Per day</p>
+          <p>{cars[carId-1].price} Per day</p>
         </div>
       <div>
           <h2>Reserved In : </h2>
@@ -132,9 +151,6 @@ function Cart1() {
               onChange={handleDate}
               required
             />
-            <label htmlFor="from_time">Time : </label>
-            <input id="from_time" type="time" onChange={handleTime} />
-            {/* <button type='submit'>Inquire</button> */}
           </div>
           <div>
             <label htmlFor="to_date">To end of : </label>
@@ -145,11 +161,8 @@ function Cart1() {
               onChange={handleDate}
               required
             />
-            <label htmlFor="to_time">Time : </label>
-            <input id="to_time" type="time" onChange={handleTime} />
           </div>
         </div>
-        <div>{}</div>
         <div>
           <button type="submit">Book Now !</button>
         </div>

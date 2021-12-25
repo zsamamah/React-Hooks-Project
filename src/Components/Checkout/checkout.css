@@ -3,6 +3,15 @@
     padding: 0;
 }
 
+#error_coupon{
+    color:red;
+    font-size: 0.9em;
+    margin: 0;
+    padding: 0;
+    
+
+}
+
 .checkout-left select, .checkout-left input{
     width: 90%;
 }
