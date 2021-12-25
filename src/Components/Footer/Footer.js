@@ -39,7 +39,7 @@ export default function Footer() {
     <div className="last_services">
       <p>Full-Stack development</p>
     </div>
-    <div className="rights"><p> React Group 4 &copy; 2021</p></div>
+    <div className="rights"><p> React Group 3 &copy; 2021</p></div>
   </footer>
   )
 }
