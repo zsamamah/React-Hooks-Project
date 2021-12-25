@@ -6,10 +6,6 @@
   width: 80%;
   height: 70%;
 }
-
-
-
-
 .cart-container {
   width: 80%;
   margin: 5em auto;
@@ -103,11 +99,14 @@
 }
 .table-button3 {
   padding: 0.6em;
-  background-color: #03a9f4;
+  background-color: var(--p_light);
   border: none;
   border-radius: 0.5em;
   color: #fff;
   margin-top: 1em;
+}
+.table-button3:hover{
+  background-color: var(--s_dark);
 }
 .empty-container {
   height: 100vh;
@@ -132,11 +131,11 @@
   }
 }
 .cart-img {
-  width: 9em;
+  width: 15em;
 }
 .title-cart {
   margin: 1em;
-  color: #03a9f4;
+  color: var(--p_light);
   font-size: 2em;
 }
 .discount {

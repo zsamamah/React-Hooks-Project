@@ -55,6 +55,17 @@ const handleChange = (e)=>{
           setlogin_password(e.target.value)
           break;
 
+      case 'fname':
+        setfname(e.target.value)
+        break;
+      
+        case 'lname':
+          setlname(e.target.value)
+          break;
+        case 'image_url':
+          setimage_url(e.target.value)
+          break;
+
         default:
           alert('check id in login file')
       }
@@ -96,7 +107,7 @@ const badImage = (e)=>{
           <form id="login-form" onSubmit={handleSubmit} action={localStorage.getItem("redirectTo")?'/checkout':'/'}>
             <div>
               <label htmlFor="login_email">
-                Username or email address
+                Email Address
                 <span className="accounts-important">*</span>
               </label>
               <br />

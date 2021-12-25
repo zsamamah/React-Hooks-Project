@@ -115,6 +115,7 @@ export function Shop() {
                 color={car.color}
                 year={car.year}
                 alt={car.alt}
+                gear={car.gear}
               />
             );
           })}

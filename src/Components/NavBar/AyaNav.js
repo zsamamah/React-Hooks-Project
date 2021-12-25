@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./ayaNav.css";
 import { NavLink,useNavigate } from "react-router-dom";
+import Logo from "../../logoNav2.png";
 
 export default function HandleLogout(){
   let navigate=useNavigate();
@@ -55,16 +56,23 @@ function Nav(props){
       });
     }
   };
-  let logOut = () => {
-    props.handleLogoutClick();
-  };
+
+  const [isLogged, setIsLogged] = useState('Login')
+  React.useEffect(() => {
+    if(localStorage.getItem('logged_in')){
+      setIsLogged('Account');
+    }
+    else{
+      setIsLogged('Login')
+    }
+  })
     return (
       <div className="Nav navContainer">
         <div className="Nav logoContainer">
           <NavLink to="/">
             <img
               className="Nav navLogo"
-              src={state.src1}
+              src={Logo}
               alt="Site Logo"
             />
           </NavLink>
@@ -74,7 +82,7 @@ function Nav(props){
             src="https://img.icons8.com/external-blue-wire-juicy-fish/30/4a90e2/external-bars-ui-elements-blue-wire-blue-wire-juicy-fish-2.png"
             alt="toggleBtn"
           />
-          <div className="Nav logoName">Capsule</div>
+          {/* <div className="Nav logoName">Capsule</div> */}
         </div>
         <ul className={state.class2}>
         <div className={state.class4}>
@@ -82,68 +90,15 @@ function Nav(props){
             <NavLink to="/">Home</NavLink>
           </li>
           <li className={state.class1}>
-            <NavLink to="/store">Store</NavLink>
+            <NavLink to="/shop">Store</NavLink>
           </li>
           <li className={state.class1}>
-            <NavLink to="/aboutus">About Us</NavLink>
+            <NavLink to="/cart">Cart</NavLink>
+          </li>
+          <li className={state.class1}>
+            <NavLink to="/account">{isLogged}</NavLink>
           </li>
           </div>
-          <span className={state.class3}>
-            {localStorage.getItem("currentUser") !== null ? (
-              <div className={state.class5}>
-                  {" "}
-                <NavLink to="/cart">
-                  <li className={state.class1}>
-                    <img
-                      alt="cart icon"
-                      src="https://img.icons8.com/ios/45/4a90e2/shopping-cart.png"
-                      />
-                  </li>
-                </NavLink>
-                    <div className={state.class6}>
-                    <img
-                      alt="profile icon"
-                      src="https://img.icons8.com/color/45/000000/test-account.png"
-                    /> 
-                    <img src="https://img.icons8.com/external-those-icons-fill-those-icons/24/4a90e2/external-down-arrows-those-icons-fill-those-icons-7.png" alt="drop down" /> 
-                    <br/>
-                <div className={state.class7}>
-                  <NavLink to="/profile">
-                  <li className={state.class1}>
-                    View Profile <br/>
-                  </li>
-                      </NavLink>
-                <li className={state.class1}>
-                  <button className="Nav btn" onClick={logOut}>
-                    Log Out <br/>
-                  </button>
-                </li>
-                </div>
-              </div>
-              </div>
-            ) : (
-              <div>
-                <NavLink to="/cart">
-                  <li className={state.class1}>
-                    <img
-                      alt="cart icon"
-                      src="https://img.icons8.com/ios/45/4a90e2/shopping-cart.png"
-                    />
-                  </li>
-                </NavLink>
-                <li className={state.class1}>
-                  <button className="Nav btn">
-                    <NavLink to="/login">Log In</NavLink>
-                  </button>
-                </li>
-                <li className={state.class1}>
-                  <button className="Nav btn">
-                    <NavLink to="/register">Register</NavLink>
-                  </button>
-                </li>
-              </div>
-            )}
-          </span>
         </ul>
       </div>
     );

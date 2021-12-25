@@ -11,8 +11,9 @@ import NotFound from "./Components/NotFound/notfound";
 import UsersContainer from "./Components/Admin/usersContainer";
 import Submitted from "./Components/Admin/Submitted";
 import Navbar from "./Components/NavBar/Navbar";
-import Footer from './Components/Footer/Footer'
-import './App.css'
+import AyaNav from './Components/NavBar/AyaNav'
+import Footer from './Components/Footer/Footer';
+import './App.css';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(JSON.parse(localStorage.getItem("logged_in")))
@@ -32,7 +33,8 @@ const [items, setitems] = useState(JSON.parse(localStorage.getItem("items")))
   };
   return (
     <>
-            <Navbar loggedIn={isLoggedIn}/>
+            {/* <Navbar loggedIn={isLoggedIn}/> */}
+            <AyaNav/>
             <Switch>
             <Route
                 path="/products"

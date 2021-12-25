@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import cars from "../Shop/cars.json";
-import Image from "../../Assets/cart/cart.png";
+import Image from "../../Assets/cart/cart1.png";
 import Hero from "../Hero/Hero";
 import "./cart1.css";
 import './Cart.css'
@@ -22,9 +22,6 @@ function Cart1() {
   const [reserved, setReserved] = useState(
     JSON.parse(localStorage.getItem(`car${carId}`))
   );
-  useEffect(() => {
-    console.log("hello");
-  }, []);
 
   const handleDate = (e) => {
     switch (e.target.id) {
@@ -67,6 +64,9 @@ function Cart1() {
 
   const inquire = (e) => {
     e.preventDefault();
+    if(!localStorage.getItem('logged_in')){
+      navigate('/account')
+    }
     let from = new Date(selectedDate);
     let to = new Date(selectedDate2);
     let days = getDaysBetweenDates(from, to);

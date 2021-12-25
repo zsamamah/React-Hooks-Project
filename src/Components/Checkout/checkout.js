@@ -1,13 +1,20 @@
-import React, { useState } from 'react'
-import { Link } from "react-router-dom";
+import React, { useState,useEffect } from 'react'
+import { Link, useNavigate } from "react-router-dom";
 import './checkout.css'
 import Hero from '../Hero/Hero';
 import Image from "../../Assets/cart/cart.png";
 import cars from '../Shop/cars.json';
 
 export default function Checkout (){
-       const loggedIn=JSON.parse(localStorage.getItem('logged_in'));
+    let navigate = useNavigate()
+       const loggedIn=localStorage.getItem('logged_in')?JSON.parse(localStorage.getItem('logged_in')):{fname:"",lname:"",email:"",phone:""};
        const mycar=cars[localStorage.getItem('selected')-1];
+
+       useEffect(() => {
+           if(!localStorage.getItem('logged_in')){
+               navigate('/account');
+           }
+       }, [])
 
        const[userData,setUserData]=useState({
         fname:loggedIn.fname,
@@ -120,7 +127,7 @@ export default function Checkout (){
               <button className="table-button3">continue shopping</button>
             </Link>
           </div>
-          </> : userData.length !=0 ?  <>
+          </> : userData.length !==0 ?  <>
             <Hero title="Checkout Page"/>
             <div className='checkout-container'>
                     <form onSubmit={handleSubmit}>
