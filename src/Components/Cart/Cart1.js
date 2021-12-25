@@ -65,6 +65,7 @@ function Cart1() {
   const inquire = (e) => {
     e.preventDefault();
     if(!localStorage.getItem('logged_in')){
+      localStorage.setItem('redirectTo','/checkout')
       navigate('/account')
     }
     let from = new Date(selectedDate);

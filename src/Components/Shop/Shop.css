@@ -16,11 +16,14 @@
 }
 .shop-card {
   width: 100%;
-  margin: 0.5rem 0;
+  margin: 1rem 0;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 1em 1em 1em 2em;
+  border-left: 2px solid var(--p_green);
 }
 .shop-card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -39,7 +42,6 @@
   padding: 0 1rem;
 }
 .categories-container {
-  border-right: 2px solid var(--p_green);
   /* margin-right: 1rem; */
   width: 20%;
   margin-top: 2.5rem;
@@ -64,7 +66,7 @@
 }
 
 .car-gallery img {
-  width: 40%;
+  width: 35%;
 }
 .car-data {
   width: 60%;
@@ -90,7 +92,7 @@
   height: min-content;
   align-self: center;
   padding: 0.5em 1.5em;
-  /* border-radius: 0.2em; */
+  border-radius: 0.3em;
   /* margin-top: 1em; */
 }
 .shop-card-btn:hover {

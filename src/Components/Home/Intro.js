@@ -7,9 +7,10 @@ function Intro() {
       <section className="Home">
          <div className="overlay">
         <div className="main">
-          <h1 class="intro-h">Platinum store</h1>
+          <h1 class="intro-h">Exotic Car</h1>
           <p class="intro-p">
-            <span className="intro-text">Platinum </span>is a store of computers, mobile devices and accessories in Jordan.<br/> Our advantages strong execlusive offers on the latest products and shipping your purchases.
+            TRY <span className="intro-text">"a104"</span> COUPON WITH OUR CAR RENTAL OFFERS JUST FOR YOU!<br/>
+            Save 10% on your next daily or monthly car rental with these deals and offers.
           </p>
           <Link to="/shop">
             <button className="intro-button">Shop Now</button>

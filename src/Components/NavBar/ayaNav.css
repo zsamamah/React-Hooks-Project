@@ -1,9 +1,9 @@
 .Nav.navContainer{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color:#f2fafe;
-    box-shadow:1px 1px 12px #333333; 
-    padding: 0.5em 1.5em;
+    box-shadow:1px 1px 12px #333333;
+    padding: 0 2em;
     position: sticky;
     top: 0;
     z-index: 1000; 
@@ -14,7 +14,7 @@
     justify-content: space-between;
 }
 .Nav.navLogo{
-    width: 50px;
+    width: 5em;
 }
 .Nav.logoName{
     display: block;
@@ -26,7 +26,7 @@ text-decoration: none;
 }
 .Nav.navList{
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
     list-style: none;
     width: 85%;
@@ -36,7 +36,6 @@ text-decoration: none;
     display: flex;
     justify-content: space-around;
     width: 40%;
-    margin: 0 auto;
 }
 .Nav.rightList{
     display: flex;

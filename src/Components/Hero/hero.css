@@ -1,17 +1,23 @@
 .hero-bg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: black;
-  background-image: url(../../Assets/accounts-assets/dev22.jpeg);
+  background-image: url(../../Assets/hero/car11.jpg);
   background-size: cover;
-  height: 20em;
+  height: 22em;
   width: 100%;
   margin-bottom: 1em;
 }
-.hero-bg p {
+.overlayHero{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.453);
+  height: 22em;
+  width: 100%;
+}
+.hero_title {
   color: white;
   font-size: 5em;
+  text-align: center;
 }
 @media only screen and (max-width: 800px) {
   .hero-bg p {

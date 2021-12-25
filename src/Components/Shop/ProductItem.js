@@ -17,7 +17,6 @@ export function ProductItem({
   gear
 }) {
   let navigate = useNavigate();
-  let selected = [];
 
   // const toBook = (id) => {
   //   let btn = document.querySelectorAll(".shop-card-btn");
@@ -87,7 +86,7 @@ export function ProductItem({
           className="shop-card-btn"
           onClick={() => toBook(id)}
         >
-          Book
+          View Deal
         </button>
       </div>
     </div>

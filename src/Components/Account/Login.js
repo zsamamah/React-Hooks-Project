@@ -1,14 +1,17 @@
-import React,{useState} from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React,{useState,useEffect} from "react";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import './accounts.css';
 import tempMan from '../../Assets/accounts-assets/temp_man.jpg';
 import Hero from "../Hero/Hero";
-import Weather from '../weather';
+import cars from '../Shop/cars.json';
 
 function Login(props) {
 
   let navigate = useNavigate();
 
+  const [orders, setOrders] = useState(null)
+
+  
   const [logged_user, setloggedUSer] = useState(JSON.parse(localStorage.getItem("logged_in"))?JSON.parse(localStorage.getItem('logged_in')):{fname:"",lname:"",image_url:""})
   const [login_email, setlogin_email] = useState("")
   const [login_password, setlogin_password] = useState("")
@@ -17,6 +20,13 @@ function Login(props) {
   const [lname, setlname] = useState(logged_user.lname)
   const [image_url, setimage_url] = useState(logged_user.img)
   const [logged, setlogged] = useState("")
+  
+  useEffect(() => {
+    let orders = JSON.parse(localStorage.getItem('submittedOrders'));
+    const myOrders = orders.filter((order)=>logged_user.email===order.email)
+    setOrders(myOrders)
+  })
+
 
   const handleSubmit = async (e)=>{
     let found=false;
@@ -44,6 +54,13 @@ function Login(props) {
         e.preventDefault();
         alert('invalid login')
     }
+
+    if(localStorage.getItem('redirectTo')){
+      localStorage.removeItem('redirectTo')
+      navigate('/checkout')
+    }
+    else
+      navigate('/')
 }
 const handleChange = (e)=>{
       switch(e.target.id){
@@ -89,7 +106,8 @@ const changeData=()=>{
 }
 const logout = () => {
     localStorage.removeItem("logged_in");
-    // setloggedUSer(null)
+    localStorage.removeItem('selected');
+    localStorage.removeItem('temp');
     props.handleChangeRole();
 }
 const badImage = (e)=>{
@@ -104,7 +122,7 @@ const badImage = (e)=>{
         <div className="login-container">
         <h1 className="login-title">Login</h1>
         <fieldset id="login-fieldset">
-          <form id="login-form" onSubmit={handleSubmit} action={localStorage.getItem("redirectTo")?'/checkout':'/'}>
+          <form id="login-form" onSubmit={handleSubmit}>
             <div>
               <label htmlFor="login_email">
                 Email Address <span className="accounts-important">*</span>
@@ -181,6 +199,21 @@ const badImage = (e)=>{
                 </div>
             </form>
             </div>
+
+          {orders&&orders.map((order,index)=>{
+            return (
+              <div>
+                <img src={cars[order.carID-1].img} alt="my car" />
+                <p>Car : {cars[order.carID-1].name} {cars[order.carID-1].model} - {cars[order.carID-1].year}</p>
+                <p>Pickup Duration : {order.pickup_Duration}</p>
+                <p>Pickup Time : {order.pickup_time}</p>
+                <p>Due Time : {order.until_time}</p>
+              </div>
+            )
+          })}
+
+
+
             </div>
             {/* </div> */}
             {/* </div> */}

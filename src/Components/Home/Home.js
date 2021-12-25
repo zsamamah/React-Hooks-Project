@@ -4,7 +4,6 @@ import Team from './Ourteam';
 import Intro from './Intro.js';
 import Service from './Services';
 import Slider from './Slider';
-import Youtube from '../Youtube';
 
 export default function Home (){
 

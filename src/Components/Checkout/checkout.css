@@ -8,26 +8,23 @@
     font-size: 0.9em;
     margin: 0;
     padding: 0;
-    
-
 }
 
 .checkout-left select, .checkout-left input{
     width: 90%;
+    padding:0.4em;
 }
-
 
 .checkout-container{
     display: flex;
     justify-content: center;
     width: 100%;
-    background-color:rgba(3, 169, 244, 0.05);
 }
 .checkout-container form{
     display: flex;
     width: 90%;
     justify-content: space-around;
-
+    margin-bottom: 1em;
 }
 
 .left-container{
@@ -50,16 +47,11 @@
     box-shadow: rgba(219, 219, 219, 0.566);
 }
 
-.checkout-adjacent{
-    display: flex;
-}
-
 .checkout-right{
     display: flex;
     flex-direction: column;
     width: 48%;
     justify-content: space-evenly;
-    height: 70vh;
     margin-top: 2em;
     background-color: white;
     border-style: solid;
@@ -82,8 +74,10 @@
 }
 
 .checkout-summary table{
-    width:90%;
-    border-radius: 0.5em;
+    margin: 0 auto;
+}
+.checkout-summary table td{
+    padding: 0.2em 0.5em;
 }
 
 .table-grey{
@@ -93,14 +87,15 @@
 .checkout-summary th{
     width: 80%;
     text-align: left;
+    padding: 0.2em 0.5em;
 }
 
 .checkout-payment{
-    width: 90%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    background-color: lightgray;
+    background-color: rgba(211, 211, 211, 0.44);
     border-radius: 0.5em;
 }
 
@@ -158,12 +153,14 @@
 }
 
 #placeOrder{
-    width: 25%;
-    background-color: #2596be;
+    background-color: var(--p_light);
     color: white;
     border-radius: 0.5em;
     padding: 0.7em 1em;
     border-style: none;
+}
+#placeOrder:hover{
+    background-color: var(--p_green);
 }
 
 @media only screen and (max-width: 750px) {

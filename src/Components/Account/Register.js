@@ -55,6 +55,7 @@ const [role, setrole] = useState("user")
         users.push(user);
         localStorage.setItem("users", JSON.stringify(users));
         alert("Successfully registration !");
+        navigate('/account')
       } else {
         let foundEmail = false;
         let myUsers = JSON.parse(localStorage.getItem("users"));
@@ -70,7 +71,7 @@ const [role, setrole] = useState("user")
         } else {
           myUsers.push(user);
           localStorage.setItem("users", JSON.stringify(myUsers));
-          navigate('/login');
+          navigate('/account');
         }
       }
     } else {
@@ -163,7 +164,7 @@ const [role, setrole] = useState("user")
         <div>
         <h1>Register</h1>
         <fieldset id="register-fieldset">
-            <form action="/" onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
               <div id="register-form">
             <div className="formGroupRegisterMahdi">
               <label htmlFor="fname">
@@ -213,6 +214,7 @@ const [role, setrole] = useState("user")
                 maxLength="14"
                 id="phone"
                 placeholder="07xxxxxxxx"
+                onChange={validator}
                 required
               />
             </div>

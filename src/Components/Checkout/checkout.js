@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react'
 import { Link, useNavigate } from "react-router-dom";
-import './checkout.css'
+import './checkout.css';
 import Hero from '../Hero/Hero';
 import Image from "../../Assets/cart/cart.png";
 import cars from '../Shop/cars.json';
@@ -22,22 +22,22 @@ export default function Checkout (){
         email:loggedIn.email,
         phone:loggedIn.phone,
         pickup_time:null,
-        unti_time:null,
+        until_time:null,
         cashMsg1:'flex',
         cashMsg2:'none',
         redirect:null,
        })
 
-       const [coupon, setCoupon] = useState("cat")
+       const [coupon, setCoupon] = useState("a104")
        const [couponHandler, setCouponHandler] = useState(null)
        const [discount, setDiscount] = useState(0)
 
        let subtotal;
 
      const handleChange=(e)=>{
-          const {name,value}=e.target;
+          const {id,value}=e.target;
           setUserData((prev)=>{
-              return {...prev,[name]:value}
+              return {...prev,[id]:value}
           })
     }
 
@@ -67,13 +67,18 @@ export default function Checkout (){
     }
 
    const handleSubmit=()=>{
+       let duration = JSON.parse(localStorage.getItem('temp'))
         const checkoutInfo={
             fname:userData.fname,
             lname:userData.lname,
             payment: userData.cashMsg1==="flex"? "Cash":"Credit Card",
             status:"Pending",
             phone:userData.phone,
-            email:userData.email
+            email:userData.email,
+            carID:localStorage.getItem('selected'),
+            pickup_Duration: `${duration[0]} : ${duration[duration.length-1]}`,
+            pickup_time:userData.pickup_time,
+            until_time:userData.until_time
         }
 
         let ordersArr =JSON.parse(localStorage.getItem('submittedOrders'));
@@ -93,7 +98,18 @@ export default function Checkout (){
             let new_array = [...dates,...new_dates]
             localStorage.setItem(`car${mycar.id}`,JSON.stringify(new_array))
         }
-        
+
+        // if(!localStorage.getItem('rentedCars')){
+        //     let arr=[];
+        //     arr.push(localStorage.getItem('selected'))
+        //     localStorage.setItem('rentedCars',JSON.stringify(arr))
+        // }
+        // else{
+        //     let arr = JSON.parse(localStorage.getItem('rentedCars'))
+        //     arr.push(localStorage.getItem('selected'))
+        //     localStorage.setItem('rentedCars',JSON.stringify(arr))
+        // }
+
         localStorage.removeItem('selected');
         localStorage.removeItem('temp');
 
@@ -122,9 +138,9 @@ export default function Checkout (){
            {userData.redirect ? <>
            <Hero title="Checkout Page"/>
             <div className="empty-container">
-            <div>Your order is submitted, it will be delivered within 2 to three weeks!</div>
+            <div>Your car is rented successfully !</div>
             <Link to="/shop">
-              <button className="table-button3">continue shopping</button>
+              <button className="table-button3">Continue Shopping</button>
             </Link>
           </div>
           </> : userData.length !==0 ?  <>
@@ -135,31 +151,29 @@ export default function Checkout (){
                                 <div className='left-container'>
 
                                 <h3>Billing details</h3>
-                                <div className='checkout-adjacent'>
                                     <label>
                                         <p>First Name:</p>
-                                        <input placeholder='First Name' type="text" name="fname" value={userData.fname} onChange={handleChange}/>
+                                        <input placeholder='First Name' type="text" id="fname" value={userData.fname} onChange={handleChange}/>
                                     </label>
                                     <label>
                                         <p>Last Name:</p>
-                                        <input placeholder='Last Name' type="text" name="lname" onChange={handleChange} value={userData.lname}/>
+                                        <input placeholder='Last Name' type="text" id="lname" onChange={handleChange} value={userData.lname}/>
                                     </label>
-                                </div>
                                 <label>
                                     <p>Phone</p>
-                                    <input placeholder='Phone' onChange={handleChange} required name="phone" type="tel" value={userData.phone}/>
+                                    <input placeholder='Phone' onChange={handleChange} required id="phone" type="tel" value={userData.phone}/>
                                     </label>
                                     <label>
                                     <p>Email address</p>
-                                    <input placeholder='Email address' onChange={handleChange} required type="email" name="email" value={userData.email}/>
+                                    <input placeholder='Email address' onChange={handleChange} required type="email" id="email" value={userData.email}/>
                                 </label>
                                 <label>
                                     <p>Pickup Time</p>
-                                <input type='time' name="pickup_time" onChange={handleChange} required/>
+                                <input type='time' id="pickup_time" onChange={handleChange} required/>
                                 </label>
                                 <label>
                                     <p>Recieving Time</p>
-                                    <input type='time' name='unti_time' onChange={handleChange} required/>
+                                    <input type='time' id='until_time' onChange={handleChange} required/>
                                 </label>
                             </div>
                         </div>
@@ -176,7 +190,7 @@ export default function Checkout (){
             type='button'
             onClick={couponDiscount}
           >
-            Apply coupon
+            Apply Coupon
           </button>
           <p id="error_coupon"></p>
         </div>

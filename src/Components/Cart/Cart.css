@@ -21,19 +21,22 @@
 }
 .table-head,
 .table-footer {
-  background-color: rgb(245, 245, 245);
+  /* background-color: rgb(245, 245, 245); */
   border: none;
   padding-top: 1.5em
 }
 .table-btn {
   padding: 0.6em 1em;
-  background-color: #03a9f4;
+  background-color: var(--s_dark);
   border: none;
   border-radius: 0.5em;
   color: #fff;
 }
+.table-btn:hover{
+  background-color:#739996;
+}
 .table-input {
-  width: 25%;
+  /* width: 25%; */
   height: 6vh;
   margin-right: 0.5em;
   border-radius: 0.2em;
@@ -106,10 +109,10 @@
   margin-top: 1em;
 }
 .table-button3:hover{
-  background-color: var(--s_dark);
+  background-color: var(--p_green);
 }
 .empty-container {
-  height: 100vh;
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
