@@ -1,5 +1,6 @@
 footer {
     background-color: #808080;
+    background-color: var(--p_light);
     color: white;
     position: relative;
     bottom: 0;
@@ -11,6 +12,7 @@ footer {
     display: flex;
     flex-direction: column;
     row-gap: 10px;
+    box-shadow: 0px 0px 10px rgba(56, 120, 106, 0.8);
   }
   footer > div{
     position: relative;
@@ -24,21 +26,30 @@ footer {
   .social_media li {
     display: inline;
     padding: 0;
-    margin: 5px;
+    margin: 0.4em;
   }
   .social_media a {
     text-decoration: none;
     color: white;
+    font-size: 1em;
   }
-  .facebook:hover,
+
+  .social_media i{
+    transition: 0.3s ease-in-out;
+
+  }
+  .facebook:hover{
+    color: #1877f2;
+
+  }
   .linkedin:hover {
-    color: #0080ff;
+    color: #0a66c2;
   }
   .github:hover {
     color: #969696;
   }
   .youtube:hover {
-    color: red;
+    color: #ff0000;
   }
   .last_services {
     font-size: 10px;
@@ -74,7 +85,7 @@ footer {
       width: 100%;
     }
   }
-  @media screen and (max-width:360px){
+  @media screen and (max-width:480px){
     .last_services p{
       width: 100%;
       font-size: 1.3em;
@@ -83,5 +94,9 @@ footer {
       width: 100%;
       font-size: 1em;
     }
-
+    .social_media li {
+      display: inline;
+      padding: 0;
+      margin: 0.6em;
+    }
   }

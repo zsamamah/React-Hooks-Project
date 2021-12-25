@@ -141,11 +141,9 @@ const badImage = (e)=>{
           <Hero title="Account Page"/>
           <div id="accounts-form-container">
           {/* <div> */}
-            <fieldset id="profileContainer">
+            <div id="profileContainer">
                 <div id="userProfile">
-                    <div>
                 <div><img src={logged_user.img} alt="user Profile" onError={badImage}/></div>
-                </div>
                 <div className="dataContainer">
                 <div><p>Full Name : {logged_user.fname} {logged_user.lname}</p></div>
                 <div><p>Email Address: {logged_user.email}</p></div>
@@ -154,7 +152,7 @@ const badImage = (e)=>{
                </div>
             </div>
             </div>
-            </fieldset>
+            </div>
             <br/>
             {/* <div className="account-weather"> */}
             <div id="account-editData">
