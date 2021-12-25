@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 export function ProductItem({
   id,
@@ -17,8 +18,10 @@ export function ProductItem({
 
   const toBook = (id) => {
     let btn = document.querySelectorAll(".shop-card-btn");
+    let bookingMsg = document.getElementsByClassName("bookingMsg");
     let foundi;
     let found = false;
+    let selectedItem;
 
     for (let index = 0; index < btn.length; index++) {
       if (btn[index].id == id) {
@@ -27,22 +30,28 @@ export function ProductItem({
     }
     btn[foundi].style.backgroundColor = "grey";
 
-    if (!localStorage.getItem("selected")) {
+    if (!localStorage.getItem("selectedItem")) {
       selected.push(id);
-      localStorage.setItem("selected", selected);
+      localStorage.setItem("selectedItem", selected);
+      selectedItem = id;
+      localStorage.setItem("selected", selectedItem);
+      navigate("/cart");
     } else {
-      const prevSelected = [...localStorage.getItem("selected")];
+      const prevSelected = [...localStorage.getItem("selectedItem")];
       prevSelected.forEach((carID) => {
         if (carID === id) {
           found = true;
+          bookingMsg[id - 1].style.display = "block";
         } else if (carID !== id && !found) {
           found = false;
         }
       });
       if (!found) {
         const newSelect = [];
-        newSelect.push(localStorage.getItem("selected"), id);
-        localStorage.setItem("selected", newSelect);
+        newSelect.push(localStorage.getItem("selectedItem"), id);
+        localStorage.setItem("selectedItem", newSelect);
+        selectedItem = id;
+        localStorage.setItem("selected", selectedItem);
         navigate("/cart");
       }
     }
@@ -50,7 +59,6 @@ export function ProductItem({
   return (
     <div className="shop-card shop-text-center" key={id}>
       <img src={src} alt={alt} className="shop-card-img" />
-
       <div className="car-data">
         <p className="shop-card-label">
           {name} - {model} - {year}
@@ -58,7 +66,9 @@ export function ProductItem({
         <p>Color: {color}</p>
         <p>Seats:{seats}</p>
         <p className="shop-card-price"> Price: JOD {price}</p>
-
+        <p className="bookingMsg" id={id}>
+          You Already Booked This Car
+        </p>
         <button
           id={id}
           type="submit"

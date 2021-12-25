@@ -5,6 +5,15 @@
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
+.hero-gallery {
+  padding: 1rem;
+  background-color: var(--p_light);
+}
+.hero-gallery > h1 {
+  margin-top: 5%;
+  text-align: center;
+  color: white;
+}
 .shop-card {
   width: 100%;
   margin: 0.5rem 0;
@@ -88,13 +97,17 @@
   background-color: var(--p_light);
   font-weight: bold;
 }
+.bookingMsg {
+  display: none;
+  color: red !important;
+}
 .shop-section {
   height: 60vh;
   justify-content: center;
   align-items: center;
   /* padding-bottom:1rem; */
 }
-.shop-bg {
+/* .shop-bg {
   position: absolute;
   top: 0;
   right: 0;
@@ -102,28 +115,8 @@
   padding-bottom: 3rem;
   height: 60%;
   opacity: 1;
-}
+} */
 
-.fa-plus-square,
-.fa-minus-square {
-  cursor: pointer;
-}
-
-.counterShop {
-  display: flex;
-  text-align: center;
-  justify-content: space-around;
-  align-items: center;
-  width: 25%;
-}
-
-.counterShop p {
-  font-size: 2em;
-  margin: 0;
-}
-.counterShop i {
-  font-size: 1.5em;
-}
 #rating-filter {
   background-color: var(--p_green);
   color: white;

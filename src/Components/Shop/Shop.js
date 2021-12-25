@@ -63,7 +63,9 @@ export function Shop() {
   };
   return (
     <>
-      <h1>Gallery</h1>
+      <div className="hero-gallery">
+        <h1> Cars Gallery</h1>
+      </div>
       <div className="shop-container">
         <div className="categories-container">
           <p>Categories</p>
