@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import './accounts.css';
 import tempMan from '../../Assets/accounts-assets/temp_man.jpg';
 import Hero from "../Hero/Hero";
@@ -48,7 +48,7 @@ function Login(props) {
       let user=registerd_users[index]
       user['remember']=remember
       localStorage.setItem("logged_in",JSON.stringify(user));
-       const logged_user=JSON.parse(localStorage.getItem('logged_in'))
+      //  const logged_user=JSON.parse(localStorage.getItem('logged_in'))
         props.handleChangeRole();
         await setlogged(JSON.parse(localStorage.getItem('logged_in')))
     }
@@ -88,23 +88,6 @@ const handleChange = (e)=>{
         default:
           alert('check id in login file')
       }
-}
-const changeData=()=>{
-  let logged_user=JSON.parse(localStorage.getItem("logged_in"));
-  if(fname!==null) logged_user.fname=fname
-  if(lname!==null) logged_user.lname=lname
-  if(image_url!==null) logged_user.img=image_url
-  let users=JSON.parse(localStorage.getItem('users'))
-  for(let i=0;i<users.length;i++){
-    if(users[i].email===logged_user.email){
-      users[i].fname=logged_user.fname
-      users[i].lname=logged_user.lname
-      users[i].img=logged_user.img
-      localStorage.setItem('users',JSON.stringify(users))
-      localStorage.setItem('logged_in',JSON.stringify(logged_user))
-      break;
-    }
-  }
 }
 const logout = () => {
     localStorage.removeItem("logged_in");
@@ -165,7 +148,7 @@ const badImage = (e)=>{
                 <div><img src={logged_user.img} alt="user Profile" onError={badImage}/></div>
                 <div className="dataContainer">
                 <div><p>Full Name : {logged_user.fname} {logged_user.lname}</p></div>
-                <div><p>Email Address: {logged_user.email}</p></div>
+                <div><p id="email_account">Email Address: {logged_user.email}</p></div>
                 <div>
                 <button type="button" onClick={logout} id="logoutBtn">Log out !</button>
                </div>

@@ -98,17 +98,6 @@ export default function Checkout() {
       localStorage.setItem(`car${mycar.id}`, JSON.stringify(new_array));
     }
 
-    // if(!localStorage.getItem('rentedCars')){
-    //     let arr=[];
-    //     arr.push(localStorage.getItem('selected'))
-    //     localStorage.setItem('rentedCars',JSON.stringify(arr))
-    // }
-    // else{
-    //     let arr = JSON.parse(localStorage.getItem('rentedCars'))
-    //     arr.push(localStorage.getItem('selected'))
-    //     localStorage.setItem('rentedCars',JSON.stringify(arr))
-    // }
-
     localStorage.removeItem("selected");
     localStorage.removeItem("temp");
 
@@ -224,6 +213,7 @@ export default function Checkout() {
                       type="email"
                       id="email"
                       value={userData.email}
+                      disabled
                     />
                   </label>
                   <label>

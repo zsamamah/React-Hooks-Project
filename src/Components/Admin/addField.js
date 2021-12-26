@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Products from "../Shop/Products";
 import Hero from "../Hero/Hero";
 import './admin.css';
 
@@ -73,7 +72,6 @@ function AddField(props) {
           />
           <button type="submit" className="btn bg-primary text-white fw-bold">Add Card</button>
         </form>
-        <Products showDelete={true} deleteCard={props.deleteCard} items={props.items} />
       </>
   )
 }

@@ -116,7 +116,7 @@ ul li > a.active {
 @media screen and (min-width: 800px) {
   .toggle.navList {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     list-style: none;
     width: 60%;

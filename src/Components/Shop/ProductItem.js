@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router";
 import {GiGearStickPattern} from 'react-icons/gi';
 import {IoColorPaletteOutline} from 'react-icons/io5';
@@ -17,47 +17,6 @@ export function ProductItem({
   gear
 }) {
   let navigate = useNavigate();
-
-  // const toBook = (id) => {
-  //   let btn = document.querySelectorAll(".shop-card-btn");
-  //   let bookingMsg = document.getElementsByClassName("bookingMsg");
-  //   let foundi;
-  //   let found = false;
-  //   let selectedItem;
-
-  //   for (let index = 0; index < btn.length; index++) {
-  //     if (btn[index].id === id) {
-  //       foundi = index;
-  //     }
-  //   }
-  //   btn[foundi].style.backgroundColor = "grey";
-
-  //   if (!localStorage.getItem("selectedItem")) {
-  //     selected.push(id);
-  //     localStorage.setItem("selectedItem", selected);
-  //     selectedItem = id;
-  //     localStorage.setItem("selected", selectedItem);
-  //     navigate("/cart");
-  //   } else {
-  //     const prevSelected = [...localStorage.getItem("selectedItem")];
-  //     prevSelected.forEach((carID) => {
-  //       if (carID === id) {
-  //         found = true;
-  //         bookingMsg[id - 1].style.display = "block";
-  //       } else if (carID !== id && !found) {
-  //         found = false;
-  //       }
-  //     });
-  //     if (!found) {
-  //       const newSelect = [];
-  //       newSelect.push(localStorage.getItem("selectedItem"), id);
-  //       localStorage.setItem("selectedItem", newSelect);
-  //       selectedItem = id;
-  //       localStorage.setItem("selected", selectedItem);
-  //       navigate("/cart");
-  //     }
-  //   }
-  // };
 
   const toBook = (id)=>{
     localStorage.setItem('selected',id);

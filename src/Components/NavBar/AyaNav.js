@@ -14,7 +14,7 @@ export default function HandleLogout() {
   return <Nav handleLogoutClick={handleLogoutClick} />;
 }
 
-function Nav(props) {
+function Nav() {
   const [state, setState] = useState({
     src1: "../assets/images/logoImg.png",
     status: 0,

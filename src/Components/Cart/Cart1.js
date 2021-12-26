@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import cars from "../Shop/cars.json";
 import Image from "../../Assets/cart/cart1.png";
@@ -14,7 +14,6 @@ function Cart1() {
   y.setDate(y.getDate() + 7);
   const [carId, setCarId] = useState(localStorage.getItem("selected"));
   const [today, setToday] = useState(x.toISOString().split("T")[0]);
-  const [thisDay, setThisDay] = useState(x.toISOString().split("T")[0]);
   const [maxDay, setMaxDay] = useState(y.toISOString().split("T")[0]);
   const [from_time, setfrom_time] = useState(null);
   const [to_time, setTo_time] = useState(null);

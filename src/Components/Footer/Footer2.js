@@ -64,28 +64,28 @@ export class Footer extends Component {
                 <div >
                     <ul className="FooterIcons">
         <li>
-          <a target="_blank"
+          <a
             href="https://www.facebook.com/" rel="noopener"
           >
             <i className="fab fa-facebook-square fa-2x facebook"></i>
           </a>
         </li>
         <li>
-          <a target="_blank"
+          <a
             href="https://www.linkedin.com" rel="noopener"
           >
             <i className="fab fa-linkedin fa-2x linkedin"></i>
           </a>
         </li>
         <li>
-          <a target="_blank"
+          <a
             href="https://github.com/" rel="noopener"
           >
             <i className="fab fa-github-square fa-2x github"></i>
           </a>
         </li>
         <li>
-          <a target="_blank"
+          <a
             href="https://www.youtube.com" rel="noopener"
           >
             <i className="fab fa-youtube fa-2x youtube"></i>

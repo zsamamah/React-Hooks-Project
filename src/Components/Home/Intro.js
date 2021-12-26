@@ -7,8 +7,8 @@ function Intro() {
     <section className="Home">
       <div className="overlay">
         <div className="main">
-          <h1 class="intro-h">Exotic Car</h1>
-          <p class="intro-p">
+          <h1 className="intro-h">Exotic Car</h1>
+          <p className="intro-p">
             TRY <span className="intro-text">"a104"</span> COUPON WITH OUR CAR
             RENTAL OFFERS JUST FOR YOU!
             <br />

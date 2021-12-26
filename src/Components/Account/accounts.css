@@ -73,6 +73,9 @@ fieldset a {
   background-color: var(--p_light);
 
 }
+#email_account{
+  text-align: center;
+}
 .error {
   color: red;
   font-size: 0.8em;

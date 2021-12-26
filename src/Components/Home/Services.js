@@ -28,9 +28,9 @@ function Service (props) {
 
           return (
             <div className="serviceContainer">
-        {state.map((serv) => {
+        {state.map((serv,index) => {
           return (
-            <div className="serviceList">
+            <div className="serviceList" key={index}>
               <i className={serv.icon} id="icons"></i>
               <h2 className="service-title">{serv.service}</h2>
               <p className="service-paragraph">{serv.description}</p>
