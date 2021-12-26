@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
 import cars from "../Shop/cars.json";
 import Image from "../../Assets/cart/cart1.png";
@@ -19,9 +19,26 @@ function Cart1() {
   const [to_time, setTo_time] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedDate2, setSelectedDate2] = useState(null);
-  const [reserved, setReserved] = useState(
-    JSON.parse(localStorage.getItem(`car${carId}`))
-  );
+  const [reserved, setReserved] = useState(JSON.parse(localStorage.getItem(`car${carId}`)));
+  const [item, setItem] = useState(localStorage.getItem('selected'))
+
+  useEffect(() => {
+    let todayDate = new Date(today)
+    let my_array = reserved
+    let forDelete=[]
+    for(let date in reserved){
+      let lastDate = new Date(reserved[date])
+      if(lastDate<todayDate){
+        forDelete.push(reserved[date])
+      }
+    }
+    for(let date in forDelete){
+      let index = my_array.indexOf(forDelete[date])
+      my_array.splice(index,1)
+    }
+    localStorage.setItem(`car${carId}`,JSON.stringify(my_array))
+    setReserved(JSON.parse(localStorage.getItem(`car${carId}`)))
+  }, [])
 
   const handleDate = (e) => {
     switch (e.target.id) {
@@ -36,29 +53,12 @@ function Cart1() {
     }
   };
 
-  const handleTime = (e) => {
-    switch (e.target.id) {
-      case "from_time":
-        setfrom_time(e.target.value);
-        break;
-      case "to_time":
-        setTo_time(e.target.value);
-        break;
-      default:
-        alert("check time");
-    }
-  };
-
   const getDaysBetweenDates = (d0, d1) => {
     var msPerDay = 8.64e7;
-    // Copy dates so don't mess them up
     var x0 = new Date(d0);
     var x1 = new Date(d1);
-    // Set to noon - avoid DST errors
-    x0.setHours(12, 0, 0);
-    x1.setHours(12, 0, 0);
-
-    // Round to remove daylight saving errors
+    x0.setHours(12,0,0);
+    x1.setHours(12,0,0);
     return Math.round((x1 - x0) / msPerDay);
   };
 
@@ -78,11 +78,11 @@ function Cart1() {
     }
 
     if (!localStorage.getItem(`car${carId}`)) {
-    //   localStorage.setItem(`car${carId}`, JSON.stringify(range_dates));
       localStorage.setItem(`temp`,JSON.stringify(range_dates))
       alert('Done !')
       navigate('/checkout')
-    } else {
+    }
+    else {
       let reserved_dates = JSON.parse(localStorage.getItem(`car${carId}`));
       let found = false;
       let car_found = [];
@@ -90,12 +90,9 @@ function Cart1() {
         if (range_dates.indexOf(reserved_dates[i]) !== -1) {
           found = true;
           car_found.push(reserved_dates[i]);
-          // break;
         }
       }
       if (!found) {
-        // reserved_dates.push(selectedDate);
-        // localStorage.setItem(`car${carId}`, JSON.stringify(reserved_dates));
         localStorage.setItem(`temp`,JSON.stringify(range_dates))
         alert('Done !')
         navigate('/checkout')
@@ -104,8 +101,12 @@ function Cart1() {
       }
     }
   };
+  const emptyCart = ()=>{
+    localStorage.removeItem('selected');
+    setItem(null)
+  }
 
-  if(!localStorage.getItem('selected'))
+  if(!item)
   return(
     <>
     <Hero title="Cart Page" />
@@ -124,6 +125,7 @@ function Cart1() {
       <Hero title="Cart Page" />
     <div className="cartCont">
       <div id="selected_car">
+      <div><button type="button" id="removeCart" onClick={emptyCart}><i className="far fa-times-circle fa-2x red"></i></button></div>
         <div>
           <img src={cars[carId-1].img} alt="Car" />
         </div>
@@ -133,9 +135,7 @@ function Cart1() {
           </p>
           <p>{cars[carId-1].price}$ Per day</p>
         </div>
-      {/* </div> */}
       <form id="booking_Form" onSubmit={inquire}>
-        {/* <div > */}
           <div className="formGroup">
             <label htmlFor="from_date">From Beginning of : </label>
             <input
@@ -157,10 +157,7 @@ function Cart1() {
               required
             />
           </div>
-        {/* </div> */}
-        {/* <div> */}
           <button type="submit" id="submitButtonMahdi"><span>Book Now !</span></button>
-        {/* </div> */}
         </form>
       </div>
       <div>
@@ -171,6 +168,8 @@ function Cart1() {
             return <p key={index}>{el}</p>;
           })}
       </div>  
+      </div>
+      <div>
       </div>
     </div>
     </>

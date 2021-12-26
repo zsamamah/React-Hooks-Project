@@ -1,20 +1,17 @@
 import React, { useState } from "react";
 import Hero from "../Hero/Hero";
+import cars from '../Shop/cars.json'
+import './admin.css'
 
 function Submitted() {
   const [status, setStatus] = useState(JSON.parse(localStorage.getItem("submittedOrders")))
-  const handleChangeRole=  (e,i)=>{
-    let array1=this.state.status
-    array1[i].status=e.target.value;
-    localStorage.setItem("submittedOrders",JSON.stringify(array1));
-    this.setState({status:array1})
-}
-if(localStorage.getItem('submittedOrders'))
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('logged_in')))
+if(localStorage.getItem('submittedOrders')&&user.role==="admin")
 return (
   <>
   <Hero title="Submitted Orders"/>
   <div className="grid-orders">
-    {JSON.parse(localStorage.getItem("submittedOrders")).map(
+    {status&&status.map(
       (order, indx) => {
         return (
           <div key={indx} className="orderCars">
@@ -28,32 +25,9 @@ return (
             <div>
                Phone number :  {order.phone}
             </div>
-            <div>
-               <table>
-                  <tr>
-                    <td>{order.orders.itemName}</td>
-                    <td>{order.orders.price}</td>
-                  </tr>
-                </table>
-                
-            </div>
-            <div>
-                Payment Method : {order.payment} <br/>
-                Subtotal : {order.subTotal} <br/>
-                Coupon : {order.coupon} <br/>
-                Discount : {order.discount} <br/>
-                Total : {order.price}
-            </div>
-            <div>
-                Deliver to : 
-                {order.country} , {order.state} , {order.streetAddress}
-            </div>
-            <div>
-            <select value={order.status}  name="status" onChange={(e)=>this.handleChangeRole(e,indx)}>
-                    <option value={order.status}>{order.status}</option>
-                    <option value={order.status==="Pending"? "Delivered":"Pending"}>{order.status==="Delivered"? "Pending":"Delivered"}</option>
-            </select>
-            </div>
+            <div>Car: {cars[order.carID-1].name} {cars[order.carID-1].model}</div>
+            <div>Total: {order.total}</div>
+            <div>Payment Method : {order.payment}</div>
           </div>
         );
       }
@@ -61,8 +35,16 @@ return (
   </div>
   </>
 );
-else
-return(<h1>No Submitted orders yet</h1>)
+else{
+  return(
+    <>
+    <Hero title="Orders"/>
+    <div id="no_orders">
+    <h1>{(user.role==="admin")?'No Submitted orders yet':'You don`t have access'}</h1>
+    </div>
+    </>
+  )
+}
 }
 
 export default Submitted

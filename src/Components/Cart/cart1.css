@@ -5,6 +5,13 @@ display: flex;
     align-items: baseline;
     margin: 2em 1em;
 }
+.red{
+    color: red;
+}
+#removeCart{
+    background-color: transparent;
+    border: none;
+}
 #selected_car{
     display: flex;
     flex-direction: column;
@@ -32,8 +39,6 @@ display: flex;
     align-items: center;
     gap: 1em;
     width: 100%;
-}
-.formGroup{
 }
 .formGroup label, .formGroup input{
     text-align: center;

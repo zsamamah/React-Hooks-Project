@@ -34,7 +34,7 @@ export default function Checkout() {
   const [couponHandler, setCouponHandler] = useState(null);
   const [discount, setDiscount] = useState(0);
 
-  let subtotal;
+  let subtotal,total;
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -63,6 +63,7 @@ export default function Checkout() {
   };
 
   const finalTotal = () => {
+      total = subtotal - discount;
     return subtotal - discount;
   };
 
@@ -72,13 +73,13 @@ export default function Checkout() {
       fname: userData.fname,
       lname: userData.lname,
       payment: userData.cashMsg1 === "flex" ? "Cash" : "Credit Card",
-      status: "Pending",
       phone: userData.phone,
       email: userData.email,
       carID: localStorage.getItem("selected"),
       pickup_Duration: `${duration[0]} : ${duration[duration.length - 1]}`,
       pickup_time: userData.pickup_time,
       until_time: userData.until_time,
+      total:total
     };
 
     let ordersArr = JSON.parse(localStorage.getItem("submittedOrders"));

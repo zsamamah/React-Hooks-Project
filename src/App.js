@@ -6,9 +6,7 @@ import Login from "./Components/Account/Login";
 import Register from "./Components/Account/Register";
 import Home from './Components/Home/Home'
 import Cart1 from "./Components/Cart/Cart1";
-import AddField from "./Components/Admin/addField";
 import NotFound from "./Components/NotFound/notfound";
-import UsersContainer from "./Components/Admin/usersContainer";
 import Submitted from "./Components/Admin/Submitted";
 import AyaNav from './Components/NavBar/AyaNav';
 import Footer2 from './Components/Footer/Footer2';
@@ -34,11 +32,6 @@ const [items, setitems] = useState(JSON.parse(localStorage.getItem("items")))
     <>
             <AyaNav/>
             <Switch>
-            <Route
-                path="/products"
-                element={<AddField items={items} deleteCard={deleteCard} handleChangeitem={handleChangeitem}/>}
-              />
-              <Route path="/users" element={<UsersContainer />} />
               <Route path="/orders" element={<Submitted />} />
               <Route path="/" element={<Home />} />
               <Route
