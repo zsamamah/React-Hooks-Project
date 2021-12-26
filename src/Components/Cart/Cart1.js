@@ -15,8 +15,6 @@ function Cart1() {
   const [carId, setCarId] = useState(localStorage.getItem("selected"));
   const [today, setToday] = useState(x.toISOString().split("T")[0]);
   const [maxDay, setMaxDay] = useState(y.toISOString().split("T")[0]);
-  const [from_time, setfrom_time] = useState(null);
-  const [to_time, setTo_time] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedDate2, setSelectedDate2] = useState(null);
   const [reserved, setReserved] = useState(JSON.parse(localStorage.getItem(`car${carId}`)));
