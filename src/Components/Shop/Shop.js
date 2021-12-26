@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Products from "./Products";
-import Hero from "../Hero/Hero";
 import "./Shop.css";
 import ProductItem from "./ProductItem";
 import cars from "./cars.json";
