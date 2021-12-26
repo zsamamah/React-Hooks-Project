@@ -34,6 +34,7 @@ function Login(props) {
     let found=false;
     let index;
     let registerd_users=JSON.parse(localStorage.getItem("users"));
+    if(registerd_users)
     for(let i=0;i<registerd_users.length;i++){
       if(registerd_users[i].email===login_email){
         if(registerd_users[i].password===login_password){
