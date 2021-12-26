@@ -54,7 +54,7 @@ body {
   animation-name: slidein;
 }
 
-@keyframes slidein {
+ @keyframes slidein {
   from {
     margin-right: 50%;
     width: 110%;
@@ -62,7 +62,8 @@ body {
 
   to {
     margin-right: 0%;
-    width: 84.5%;
+    width: 93%;
+    
   }
 }
 

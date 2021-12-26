@@ -53,29 +53,6 @@ export function Slider() {
                   </div>
                 </div>
 
-                <div class="carousel-item">
-                  <div class="row p-4">
-                    <div class="t-card">
-                      <img
-                        src={cars[5].img}
-                        alt={cars[5].name}
-                        style={{ width: "100%" }}
-                      />
-
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-10 text-center ">
-                        <h4 class="text-center text-black">
-                          <strong>{cars[5].name}-{cars[5].model}-{cars[5].year}</strong>
-                        </h4>
-                        <p class="testimonial_subtitle text-center">
-                          <span class="text-warning">JOD {cars[5].price}</span>
-                          <br />
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
                 <div class="carousel-item">
                   <div class="row p-4">
@@ -99,12 +76,35 @@ export function Slider() {
                     </div>
                   </div>
                 </div>
+                <div class="carousel-item">
+                  <div class="row p-4">
+                    <div class="t-card">
+                      <img
+                        src={cars[1].img}
+                        alt={cars[1].name}
+                        style={{ width: "100%" }}
+                      />
+
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-10 text-center ">
+                        <h4 class="text-center text-black">
+                          <strong>{cars[1].name}-{cars[1].model}-{cars[1].year}</strong>
+                        </h4>
+                        <p class="testimonial_subtitle text-center">
+                          <span class="text-warning">JOD {cars[1].price}</span>
+                          <br />
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <div class="carousel-item" >
                   <div class="row p-4">
                     <div class="t-card" >
                       <img
-                        src={cars[2].img}
-                        alt={cars[2].name}
+                        src={cars[9].img}
+                        alt={cars[9].name}
                         style={{ width: "100%" }}
                       />
                     </div>
@@ -112,10 +112,10 @@ export function Slider() {
                       <div class="col-sm-10 text-center ">
                         <h4 class="text-center text-black">
                       <br/>
-                          <strong>{cars[2].name}-{cars[2].model}-{cars[2].year}</strong>
+                          <strong>{cars[9].name}-{cars[9].model}-{cars[9].year}</strong>
                         </h4>
                         <p class="testimonial_subtitle text-center">
-                          <span class="text-warning">JOD {cars[2].price}</span>
+                          <span class="text-warning">JOD {cars[9].price}</span>
                           <br />
                         </p>
                         <br />
