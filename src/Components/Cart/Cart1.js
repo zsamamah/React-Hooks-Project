@@ -142,7 +142,7 @@ function Cart1() {
             <input
               id="from_date"
               type="date"
-              min={x.toISOString().split("T")[0]}
+              min={today}
               max={maxDay}
               onChange={handleDate}
               required
@@ -164,13 +164,15 @@ function Cart1() {
         {/* </div> */}
         </form>
       </div>
-        <div id="reservedIn">
+      <div>
           <h2>Reserved In : </h2>
+        <div id="reservedIn">
         {reserved &&
           reserved.map((el, index) => {
             return <p key={index}>{el}</p>;
           })}
       </div>  
+      </div>
     </div>
     </>
   );

@@ -66,4 +66,9 @@ display: flex;
 #selected_car{
     width: 70%;
 }
+.cartCont{
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
 }
