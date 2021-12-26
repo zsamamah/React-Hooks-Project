@@ -12,13 +12,12 @@ body {
 #login-fieldset {
   padding: 1.5em;
   border-radius: 1em;
-  width: 40vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  
+  width: 100%;
 }
 fieldset a {
   color: rgb(70, 196, 255);
@@ -27,6 +26,9 @@ fieldset a {
 #login-form > div {
   width: 100%;
   margin-top: 1.5em;
+}
+#login-form{
+  width: 70%;
 }
 .my-heading{
   text-align: center;
@@ -42,8 +44,8 @@ fieldset a {
 #login_email,#login_password {
   width: 100%;
   border-radius: 0.5em;
-  padding: 1em;
-  margin-top: 0.5em;
+  padding: 0.8em 1em;
+  display: block;
 }
 .login-title {
   display: flex;
@@ -225,7 +227,6 @@ fieldset a {
     text-align: center;
   }
   #login-fieldset{
-    width: 90%;
     margin: 0;
   }
   #userProfile{
