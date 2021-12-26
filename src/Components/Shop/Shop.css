@@ -118,6 +118,11 @@
   height: 60%;
   opacity: 1;
 } */
+#reservedIn{
+  height: 20em;
+  overflow-y: scroll;
+}
+
 
 #rating-filter {
   background-color: var(--p_green);

@@ -138,9 +138,10 @@ text-decoration: none;
     .menu{
      display: inline;
      height: 30px;
-     margin: 4% 0;
+     margin: 6% 0;
      position: absolute;
      right: 5%;
+     top:calc(50%-30px)
 
     }
 .Nav.navList{
