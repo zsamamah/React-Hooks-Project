@@ -3,7 +3,7 @@
     justify-content: space-between;
     background-color:#f2fafe;
     box-shadow:1px 1px 12px #333333;
-    padding: 0 5em;
+    padding: 0 2em;
     position: sticky;
     top: 0;
     z-index: 1000; 
@@ -138,10 +138,10 @@ text-decoration: none;
     .menu{
      display: inline;
      height: 30px;
-     margin: 6% 0;
+     /* margin: 6% 0; */
      position: absolute;
      right: 5%;
-     top:calc(50%-30px)
+     top:1.5em;
 
     }
 .Nav.navList{
