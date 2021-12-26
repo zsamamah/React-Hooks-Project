@@ -13,12 +13,12 @@ const [state,setState] = useState([
       },
       {
         name: "Ali naser",
-        text: "‟This is my third order. Always on time. The product as seen and expected. Costumer service are prompt  „",
+        text: "‟This is my third order. Always on time. The product as seen and expected order. Costumer service are prompt order „",
         image: Ali_Pic,
       },
       {
         name: "kristeen",
-        text: "‟Ordered several times n always satisfied with my purchases. Variety of collections with reasonable prices„",
+        text: "‟Ordered several times n always satisfied with my purchases order. Variety of collections with reasonable prices„",
         image: Kristeen_Pic,
       },
     ])
@@ -26,23 +26,15 @@ const [state,setState] = useState([
     return (
       <div className='testimonials-container'>
         <h2 className="home-heading">Testimonials</h2>
-
+        <br /> <pre></pre> <pre></pre>
         <div className="testimonials">
           {state.map((teamInfo,index) => {
             return (
-              <div key={index} className="people">
-                
-                <h4>{teamInfo.name}</h4>
-                <p className='testimonials-p'>{teamInfo.text}</p>
-                  <br/> <pre>
-                  </pre> <br />
-                <div className="testimonialsLowerDiv">
-                <img className="img" alt="Review" src={teamInfo.image} />
-                <div className="star">
-                <img src="https://img.icons8.com/external-kmg-design-flat-kmg-design/32/000000/external-star-weather-kmg-design-flat-kmg-design.png"/> 
-                <img src="https://img.icons8.com/external-kmg-design-flat-kmg-design/32/000000/external-star-weather-kmg-design-flat-kmg-design.png"/>
-                <img src="https://img.icons8.com/external-kmg-design-flat-kmg-design/32/000000/external-star-weather-kmg-design-flat-kmg-design.png"/>               </div>
-              </div>
+              <div className="people"
+              key={index}>
+              <img className="img" alt="Review" src={teamInfo.image} />
+              <h4>{teamInfo.name}</h4>
+              <p className='testimonials-p'>{teamInfo.text}</p>
               </div>
             );
           })}

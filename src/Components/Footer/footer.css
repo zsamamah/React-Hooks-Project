@@ -38,19 +38,7 @@ footer {
     transition: 0.3s ease-in-out;
 
   }
-  .facebook:hover{
-    color: #1877f2;
-
-  }
-  .linkedin:hover {
-    color: #0a66c2;
-  }
-  .github:hover {
-    color: #969696;
-  }
-  .youtube:hover {
-    color: #ff0000;
-  }
+  
   .last_services {
     font-size: 10px;
     width: 100%;

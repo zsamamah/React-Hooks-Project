@@ -2,6 +2,9 @@
     display: block;
     background-color: var(--p_dark);
 }
+.Footer.cont a:hover{
+    color: var(--s_light);
+}
 .Footer.footer{
     display: flex;
     justify-content: space-evenly;
@@ -27,16 +30,34 @@
     font-size: 14px;
 }
 .Footer.Items:hover{
-    transform: scale(1.1);
-    transition-duration: 3ms;
+    transform: scale(1.05);
+    transition-duration: 5ms;
     cursor: pointer;
 }
-.Footer.icons{
+.FooterIcons{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     margin:1em auto 0em;
 }
+.FooterIcons li a{
+    color: rgba(255, 255, 255, 0.829);
+}
+.facebook:hover{
+    color: var(--s_teal);
+
+  }
+  .linkedin:hover {
+    color: var(--s_teal);
+
+  }
+  .github:hover {
+    color: var(--s_teal);
+
+  }
+  .youtube:hover {
+    color: var(--s_teal);
+  }
 @media screen and (max-width:890px) {
     .Footer.firstCol{
         width: 80%;

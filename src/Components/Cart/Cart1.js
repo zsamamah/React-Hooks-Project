@@ -123,6 +123,7 @@ function Cart1() {
   return (
     <>
       <Hero title="Cart Page" />
+    <div className="cartCont">
       <div id="selected_car">
         <div>
           <img src={cars[carId-1].img} alt="Car" />
@@ -133,13 +134,6 @@ function Cart1() {
           </p>
           <p>{cars[carId-1].price}$ Per day</p>
         </div>
-      <div id="reservedIn">
-          <h2>Reserved In : </h2>
-        {reserved &&
-          reserved.map((el, index) => {
-            return <p key={index}>{el}</p>;
-          })}
-      </div>
       {/* </div> */}
       <form id="booking_Form" onSubmit={inquire}>
         {/* <div > */}
@@ -170,7 +164,14 @@ function Cart1() {
         {/* </div> */}
         </form>
       </div>
-        
+        <div id="reservedIn">
+          <h2>Reserved In : </h2>
+        {reserved &&
+          reserved.map((el, index) => {
+            return <p key={index}>{el}</p>;
+          })}
+      </div>  
+    </div>
     </>
   );
 }

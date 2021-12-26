@@ -9,49 +9,31 @@
   font-size: 1.4em;
 }
 .people {
-  width: 40%;
   color: var(--body_text);
   background-image: linear-gradient(to right, var(--p_light) , var(--s_dark));
-  /* margin: 0.5em; */
   align-items: center;
   box-shadow: 20em rgba(0, 0, 0, 0.1);
   text-align: center;
-  /* height:50vh; */
-  /* padding: 0.5em; */
-  margin: 2em;
+  padding: 1em;
+  margin: 1em;
   box-shadow:  0em 1em 2em 0em rgba(128, 128, 128, 0.514);
   border-radius: 0.6em;
 }
 .people .img {
-  width: 120px;
+  width: 110px;
   border-radius: 50%;
-  /* padding: 0.5em; */
-  height: 120px;
+  height: 110px;
   position: relative;
   top: -3em;
 
 }
 .people h4 {
-  padding: 0.5em;
   font-size: 1.8em;
-  margin-top: 0.5em;
-}
-.testimonialsLowerDiv{
-  background-color: rgba(255, 255, 255, 0.932);
-  padding: 0;
-  margin: 0;
-  box-shadow:  0em 0em 1em 0em grey;
-  border-radius: 0 0 0.6em 0.6em  ;
-  height: 9em;
-}
-.star{
-  position: relative;
-  top: -2em;
 }
 .testimonials {
-  align-items: stretch;
-  width: 85%;
   display: flex;
+  align-items: stretch;
+  width: 75%;
   justify-content: center;
   margin: 0 auto;
 }
@@ -61,66 +43,23 @@
   margin: 0.8em;
   line-height: 2;
 }
-
-
-@media screen and (max-width: 634px) {
+@media screen and (max-width: 1000px) {
   .people {
-    width: 70%;
+    height: auto; 
   }
 }
-@media screen and (max-width: 1440px) {
-
-
-}
-
-@media screen and (max-width: 1060px) {
-  .testimonials-p {
-    font-size: 1em;
-  }
-}
-@media screen and (max-width: 940px) {
-  .people {
-    /* height: 40vh; */
-  }
-  .testimonials-p {
-    font-size: 0.6em;
-  }
-  .people h4 {
-    font-size: 1.3em;
-  }
-  .people {
-    margin: 0.5em;
-  }
-}
-@media screen and (max-width: 650px) {
-  .testimonials {
+@media screen and (max-width: 900px) {
+   .testimonials {
     flex-direction: column;
     width: 50%;
   }
   .people {
-    width: 100%;
-  }
-  .people .img {
-    /* height: 15vh; */
-    width: 35%;
-  }
-  .testimonials-p {
-    font-size: 0.8em;
-    padding: 1em;
+    margin: 3em auto 1em;
   }
 }
-@media screen and (max-width: 768px) {
-  .home-heading {
-    font-size: 2em !important;
-  }
-}
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 570px) {
   .testimonials {
-    flex-direction: column;
-    width: 70%;
-  }
-  .home-heading {
-    font-size: 2em !important;
-    width : 90%;
+    width: 80%;
   }
 }
+

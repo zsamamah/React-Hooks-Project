@@ -5,7 +5,7 @@ function Service (props) {
   const [state,setState] = useState([
             {
               icon: "fas fa-shopping-cart",
-              service: "Easy shopping",
+              service: "Online Booking ",
       
               description: "Add to your cart and you will receive it within 2 day",
             },
@@ -16,8 +16,8 @@ function Service (props) {
             },
             {
               icon: "fab fa-telegram",
-              service: "Technical support",
-              description: "1-year technical support for any laptop or mobile",
+              service: "Find your car in any place",
+              description: "Find your car all around the world",
             },
             {
               icon: "far fa-envelope",

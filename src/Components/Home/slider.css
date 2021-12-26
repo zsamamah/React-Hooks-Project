@@ -16,7 +16,9 @@ body {
   height: 20%;
   text-align: center;
 }
-
+.row.p-4{
+  height: 30em;
+}
 .carousel-icon i {
   font-size: 5rem;
   color: rgba(#fff, 0.3);

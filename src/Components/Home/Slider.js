@@ -4,6 +4,7 @@ import product1 from "../../Assets/Slider/product1.png";
 import product2 from "../../Assets/Slider/product2.png";
 import product3 from "../../Assets/Slider/product3.png";
 import product4 from "../../Assets/Slider/product4.png";
+import cars from "../Shop/cars.json"
 
 export function Slider() {
   return (
@@ -12,7 +13,7 @@ export function Slider() {
         <div class="row text-center">
           <div class="col-12 text-center">
             <h1 class="display-3 fw-bold text-black home-heading ">
-              Featured Products
+              Featured cars
             </h1>
             <hr
               class="bg-white mb-4 mt-0 d-inline-block mx-auto"
@@ -33,18 +34,18 @@ export function Slider() {
                   <div class="row p-4">
                     <div class="t-card">
                       <img
-                        src={product1}
-                        alt="laptop hp"
+                        src={cars[10].img}
+                        alt={cars[10].name}
                         style={{ width: "100%" }}
                       />
                     </div>
                     <div class="row">
                       <div class="col-sm-10 text-center ">
                         <h4 class="text-center text-black">
-                          <strong>HP Laptop </strong>
+                          <strong>{cars[10].name}-{cars[10].model}-{cars[10].year} </strong>
                         </h4>
                         <p class="testimonial_subtitle text-center">
-                          <span class="text-warning">JOD450</span>
+                          <span class="text-warning">JOD {cars[10].price}</span>
                           <br />
                         </p>
                       </div>
@@ -56,48 +57,19 @@ export function Slider() {
                   <div class="row p-4">
                     <div class="t-card">
                       <img
-                        src={product3}
-                        alt="iPhone 13 pro"
+                        src={cars[5].img}
+                        alt={cars[5].name}
                         style={{ width: "100%" }}
                       />
-                      {/* <p class="lh-lg text-center">
-                          HP 15.6"Laptop intel core i3 8GB Memory 256GB   SSD"
 
-                        </p> */}
                     </div>
                     <div class="row">
                       <div class="col-sm-10 text-center ">
                         <h4 class="text-center text-black">
-                          <strong>iPhone 13 pro</strong>
+                          <strong>{cars[5].name}-{cars[5].model}-{cars[5].year}</strong>
                         </h4>
                         <p class="testimonial_subtitle text-center">
-                          <span class="text-warning">JOD500</span>
-                          <br />
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="row p-4">
-                    <div class="t-card">
-                      <img
-                        src={product4}
-                        alt="iPhone 11"
-                        style={{ width: "100%" }}
-                      />
-                      {/* <p class="lh-lg text-center">
-                          HP 15.6"Laptop intel core i3 8GB Memory 256GB   SSD"
-
-                        </p> */}
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-10 text-center ">
-                        <h4 class="text-center text-black">
-                          <strong>iPhone 11</strong>
-                        </h4>
-                        <p class="testimonial_subtitle text-center">
-                          <span class="text-warning">JOD350</span>
+                          <span class="text-warning">JOD {cars[5].price}</span>
                           <br />
                         </p>
                       </div>
@@ -109,23 +81,44 @@ export function Slider() {
                   <div class="row p-4">
                     <div class="t-card">
                       <img
-                        src={product2}
-                        alt="laptop hp"
+                        src={cars[0].img}
+                        alt={cars[0].name}
                         style={{ width: "100%" }}
                       />
-                      {/* <p class="lh-lg">
-                          HP pavilion Aero Laptop13
-                        </p> */}
                     </div>
                     <div class="row">
                       <div class="col-sm-10 text-center">
                         <h4 class="text-center text-black">
-                          <strong>HP Laptop</strong>
+                          <strong>{cars[0].name}-{cars[0].model}-{cars[0].year}</strong>
                         </h4>
                         <p class="testimonial_subtitle text-center">
-                          <span class="text-warning">JOD400</span>
+                          <span class="text-warning">JOD {cars[0].price}</span>
                           <br />
                         </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item" >
+                  <div class="row p-4">
+                    <div class="t-card" >
+                      <img
+                        src={cars[2].img}
+                        alt={cars[2].name}
+                        style={{ width: "100%" }}
+                      />
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-10 text-center ">
+                        <h4 class="text-center text-black">
+                      <br/>
+                          <strong>{cars[2].name}-{cars[2].model}-{cars[2].year}</strong>
+                        </h4>
+                        <p class="testimonial_subtitle text-center">
+                          <span class="text-warning">JOD {cars[2].price}</span>
+                          <br />
+                        </p>
+                        <br />
                       </div>
                     </div>
                   </div>

@@ -90,7 +90,7 @@ function Nav(props){
             <NavLink to="/">Home</NavLink>
           </li>
           <li className={state.class1}>
-            <NavLink to="/shop">Store</NavLink>
+            <NavLink to="/shop">Gallery</NavLink>
           </li>
           <li className={state.class1}>
             <NavLink to="/cart">Cart</NavLink>
