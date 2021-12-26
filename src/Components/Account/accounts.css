@@ -72,9 +72,11 @@ fieldset a {
   font-size: 0.8em;
 }
 #register-form {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  row-gap: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 60%;
+  margin: auto;
 }
 #register-form p {
   margin: 0;
@@ -210,7 +212,7 @@ fieldset a {
     gap: 1em;
   }
   #register-form {
-    grid-template-columns: 1fr;
+    width: 100%;
   }
   #remember-me-container {
     width: 100%;
