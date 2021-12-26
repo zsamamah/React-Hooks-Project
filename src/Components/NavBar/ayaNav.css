@@ -107,18 +107,21 @@ text-decoration: none;
     transition-duration: 2ms;
     margin: 0 auto;
 }
+
 @media screen and (min-width:800px) {
     .toggle.navList{
     display: flex;
-    justify-content: space-around;
+    justify-content: end;
     align-items: center;
     list-style: none;
     width: 60%;
     margin: 0;        
     }
     .toggle.itemList{
-     display: inline;
-     cursor: pointer;
+        display: inline;
+        /* text-align: center; */
+        padding: 0 0.5em  ;
+        text-decoration: none;
     } 
     .toggle.itemList:hover{
      transform: scale(1.1);
