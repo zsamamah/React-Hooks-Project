@@ -77,9 +77,6 @@ export function ProductItem({
         <div><p><IoColorPaletteOutline/> {color}</p></div>
         <div><p><MdAirlineSeatReclineNormal/> {seats} Seats</p></div>
         <p className="shop-card-price"> Price: JOD {price}</p>
-        <p className="bookingMsg" id={id}>
-          You Already Booked This Car
-        </p>
         <button
           id={id}
           type="submit"

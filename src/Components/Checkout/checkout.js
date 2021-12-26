@@ -178,6 +178,7 @@ export default function Checkout() {
               >
                 Apply Coupon
               </button>
+              <p id="error_coupon"></p>
             </div>
             <form onSubmit={handleSubmit}>
               <div className="checkout-left">
@@ -244,7 +245,6 @@ export default function Checkout() {
                     />
                   </label>
                 </div>
-                <p id="error_coupon"></p>
                 <div className="checkout-payment">
                   <p>Pay With</p>
                   <div className="radios">

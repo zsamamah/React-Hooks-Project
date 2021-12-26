@@ -142,3 +142,14 @@
     width: 80%;
   }
 }
+@media only screen and (max-width: 350px) {
+  .payment-msg-container1{
+    justify-content: center;
+  }
+  .payment-msg{
+    align-items: center;
+  }
+  .payment-msg input{
+    width: 70%;
+  }
+}

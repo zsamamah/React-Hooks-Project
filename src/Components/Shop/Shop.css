@@ -124,11 +124,19 @@
   cursor: pointer;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   .shop-container {
     flex-direction: column;
     align-items: center;
     font-size: 0.7em;
+  }
+  .categories{
+    flex-direction: column;
+    align-items: center;
+  }
+  .shop-card{
+    flex-direction: column;
+    align-items: center;
   }
 }
 
