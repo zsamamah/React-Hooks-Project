@@ -62,13 +62,14 @@ export function Shop() {
   return (
     <>
       <div className="hero-gallery">
-        <h1> Cars Gallery</h1>
+        <h1> Exotic Gallery</h1>
       </div>
       <div className="shop-container">
         <div className="categories-container">
           <p>Categories</p>
           <ul className="categories">
             <li onClick={() => categoryHandle("")}>All Cars</li>
+
             <li onClick={() => categoryHandle("Mercedes")}>Mercedes</li>
             <li onClick={() => categoryHandle("Audi")}>Audi</li>
             <li onClick={() => categoryHandle("Toyota")}>Toyota</li>

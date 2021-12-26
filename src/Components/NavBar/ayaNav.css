@@ -1,178 +1,175 @@
-.Nav.navContainer{
-    display: flex;
-    justify-content: space-between;
-    background-color:#f2fafe;
-    box-shadow:1px 1px 12px #333333;
-    padding: 0 2em;
-    position: sticky;
-    top: 0;
-    z-index: 1000; 
+.Nav.navContainer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f2fafe;
+  box-shadow: 1px 1px 12px #333333;
+  padding: 0 2em;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
-.Nav.logoContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.Nav.logoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.Nav.navLogo{
-    width: 5em;
+.Nav.navLogo {
+  width: 5em;
 }
-.Nav.logoName{
-    display: block;
-    color: var(--darkBlue);
-    text-align: left;
+.Nav.logoName {
+  display: block;
+  color: var(--darkBlue);
+  text-align: left;
 }
-.logoContainer a{
-text-decoration: none;
+.logoContainer a {
+  text-decoration: none;
 }
-.Nav.navList{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    list-style: none;
-    width: 85%;
-    margin: 0;
+.Nav.navList {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  width: 85%;
+  margin: 0;
 }
-.Nav .middleList{
-    display: flex;
-    justify-content: space-around;
-    width: 40%;
+.Nav .middleList {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
 }
-.Nav.rightList{
-    display: flex;
-    gap: 1em;
-    align-items: center;
+.Nav.rightList {
+  display: flex;
+  gap: 1em;
+  align-items: center;
 }
-.Nav.itemList{
-    display: inline;
-    cursor: pointer;
+.Nav.itemList {
+  display: inline;
+  cursor: pointer;
 }
-.Nav.itemList:hover{
-    transform: scale(1.1);
-    transition-duration: 0.5ms;
+.Nav.itemList:hover {
+  transform: scale(1.1);
+  transition-duration: 0.5ms;
 }
-.Nav.btns{
-    display: flex;
-    justify-content: right;
-    align-items: flex-end;
+.Nav.btns {
+  display: flex;
+  justify-content: right;
+  align-items: flex-end;
 }
-.Nav.btn{
-    background-color: var(--darkBlue);
-    color: var(--white);
-    border-radius: 2em;
-    border: black 0.5px solid;
+.Nav.btn {
+  background-color: var(--darkBlue);
+  color: var(--white);
+  border-radius: 2em;
+  border: black 0.5px solid;
 }
-.Nav.btn:hover{
-    transform: scale(1.03);
-    transition-duration: 0.8s;
-    background-color: var(--grayBlue);
+.Nav.btn:hover {
+  transform: scale(1.03);
+  transition-duration: 0.8s;
+  background-color: var(--grayBlue);
 }
-.menu{
-    display: none;
+.menu {
+  display: none;
+  font-size: 2em;
+  color: var(--p_green);
 }
-.Nav.navContainer ul li a{
-    color: unset;
-    text-decoration: none;
+ul li > a.active {
+  border-bottom: 1px solid var(--p_dark);
 }
-.Nav.profileDropList,.toggle.profileDropList{
-    display: none;
+.Nav.navContainer ul li a {
+  color: unset;
+  text-decoration: none;
 }
-.Nav.dropIcon{
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    /* position: absolute; */
-    right: 1.5%;
-    top: 30%;
+.Nav.profileDropList,
+.toggle.profileDropList {
+  display: none;
 }
-.dropIcon a{
-    color: black;
-    font-style: normal;
-    background-color: white;
+.Nav.dropIcon {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  right: 1.5%;
+  top: 30%;
 }
-.dropIcon:hover .Nav.profileDropList{
-    display: flex;
-    flex-direction: column;
-    box-shadow: grey 1px 1px 8px;
-    background-color: white;
-    padding: 1em;
-    position: absolute;
-    justify-content: center;
-    transition-duration: 2ms;
-    top: 80%;
-    margin: 0 auto;
+.dropIcon a {
+  color: black;
+  font-style: normal;
+  background-color: white;
 }
-.dropIcon:hover .toggle.profileDropList{
-    display: block;
-    background-color: white;
-    transition-duration: 2ms;
-    margin: 0 auto;
+.dropIcon:hover .Nav.profileDropList {
+  display: flex;
+  flex-direction: column;
+  box-shadow: grey 1px 1px 8px;
+  background-color: white;
+  padding: 1em;
+  position: absolute;
+  justify-content: center;
+  transition-duration: 2ms;
+  top: 80%;
+  margin: 0 auto;
+}
+.dropIcon:hover .toggle.profileDropList {
+  display: block;
+  background-color: white;
+  transition-duration: 2ms;
+  margin: 0 auto;
 }
 
-@media screen and (min-width:800px) {
-    .toggle.navList{
+@media screen and (min-width: 800px) {
+  .toggle.navList {
     display: flex;
     justify-content: end;
     align-items: center;
     list-style: none;
     width: 60%;
-    margin: 0;        
-    }
-    .toggle.itemList{
-        display: inline;
-        /* text-align: center; */
-        padding: 0 0.5em  ;
-        text-decoration: none;
-    } 
-    .toggle.itemList:hover{
-     transform: scale(1.1);
-    transition-duration: 0.5ms;
-    }
-}
-@media screen and (max-width:800px) {
-.Nav.navContainer{
-    display: block;
-}
-.Nav.logoContainer{
+    margin: 0;
+  }
+  .toggle.itemList {
     display: inline;
+    padding: 0 0.5em;
+    text-decoration: none;
+  }
+  .toggle.itemList:hover {
+    transform: scale(1.1);
+    transition-duration: 0.5ms;
+  }
 }
-    .menu{
-     display: inline;
-     height: 30px;
-     /* margin: 6% 0; */
-     position: absolute;
-     right: 5%;
-     top:1.5em;
-
-    }
-.Nav.navList{
-    display: none;
-}
-.Nav.itemList{
-    display: none;
-}
-.toggle.navList{
+@media screen and (max-width: 800px) {
+  .Nav.navContainer {
     display: block;
-    
-}
-.toggle.itemList{
+  }
+  .Nav.logoContainer {
+    display: inline;
+  }
+  .menu {
+    display: inline;
+    height: 30px;
+    position: absolute;
+    right: 5%;
+    top: 0.8em;
+  }
+  .Nav.navList {
+    display: none;
+  }
+  .Nav.itemList {
+    display: none;
+  }
+  .toggle.navList {
+    display: block;
+  }
+  .toggle.itemList {
     display: block;
     text-align: center;
-    padding: 0.5em 0 ;
+    padding: 0.5em 0;
     text-decoration: none;
-} 
-.toggle.itemList:hover{
+  }
+  .toggle.itemList:hover {
     color: var(--darkBlue);
     transition-duration: 0.5ms;
     gap: 1em;
-    
-}
-.Nav.btns{
+  }
+  .Nav.btns {
     display: none;
-}
-.toggle.btns{
+  }
+  .toggle.btns {
     display: block;
-} 
-/* .Nav.btn{
-    margin: 0.5em 0 0;
-} */
+  }
 }

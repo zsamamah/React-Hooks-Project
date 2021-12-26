@@ -51,6 +51,10 @@
 .categories {
   list-style: none;
 }
+.categories a {
+  text-decoration: none;
+  color: var(--p_dark);
+}
 .categories > li {
   margin-bottom: 5%;
   width: 50%;
@@ -62,7 +66,6 @@
 .car-gallery {
   width: 70%;
 }
-
 .car-gallery img {
   width: 35%;
 }
@@ -111,11 +114,10 @@
   height: 60%;
   opacity: 1;
 } */
-#reservedIn{
+#reservedIn {
   height: 20em;
   overflow-y: scroll;
 }
-
 
 #rating-filter {
   background-color: var(--p_green);
@@ -130,11 +132,11 @@
     align-items: center;
     font-size: 0.7em;
   }
-  .categories{
+  .categories {
     flex-direction: column;
     align-items: center;
   }
-  .shop-card{
+  .shop-card {
     flex-direction: column;
     align-items: center;
   }

@@ -1,10 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap");
 
-*{
+* {
   font-weight: 800;
 }
 
-h1, h2, h3, h4{
+h1,
+h2,
+h3,
+h4 {
   font-weight: bolder;
 }
 
@@ -12,7 +15,7 @@ html {
   width: 100%;
 }
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 .Home {
   background-image: url("../../Assets/background_image/banner-bg.jpg");
@@ -22,7 +25,7 @@ body {
   height: 100vh;
   width: 100%;
 }
-.overlay{
+.overlay {
   margin: 0 auto;
   text-align: center;
   background-size: cover;
@@ -34,8 +37,6 @@ body {
   background-color: rgba(0, 0, 0, 0.192);
 }
 
-
-
 .intro-text {
   color: var(--s_teal);
   text-shadow: #fff;
@@ -44,26 +45,24 @@ body {
   color: var(--s_teal);
   font-size: 3.5em;
   text-shadow: rgba(2, 2, 2, 0.952) 1px 1px 5px;
-
 }
 
 .intro-p {
   color: var(--body_text);
   font-size: 1.5em;
   animation-duration: 3s;
-  padding: 10px;
   animation-name: slidein;
 }
 
 @keyframes slidein {
   from {
-    margin-left: -20%;
-    width: 300%;
+    margin-right: 50%;
+    width: 110%;
   }
 
   to {
-    margin-right: 10%;
-    width: 100%;
+    margin-right: 0%;
+    width: 84.5%;
   }
 }
 
@@ -93,7 +92,27 @@ body {
   color: var(--p_dark);
   transition: background-color 400ms linear;
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 800px) {
+  .intro-h {
+    font-size: 2.5em;
+  }
+  .intro-p {
+    font-size: 1em;
+    width: 110%;
+  }
+  @keyframes slidein {
+    from {
+      margin-right: 60%;
+      width: 110%;
+    }
+
+    to {
+      margin-right: 0%;
+      width: 110%;
+    }
+  }
+}
+@media screen and (max-width: 550px) {
   .main {
     font-size: 1em;
     width: 100%;
@@ -103,7 +122,18 @@ body {
   }
   .intro-p {
     font-size: 0.9em;
-    width: 80%;
+    width: 90%;
+  }
+  @keyframes slidein {
+    from {
+      margin-right: 60%;
+      width: 90%;
+    }
+
+    to {
+      margin-right: 0%;
+      width: 90%;
+    }
   }
 }
 @media screen and (max-width: 1121px) {

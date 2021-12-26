@@ -20,8 +20,8 @@
     "price": "50",
     "seats": "5",
     "gear": "Automatic",
-    "color": "Grey",
-    "img": "https://cdn2.rcstatic.com/images/car_images/web/audi/q5_lrg.jpg"
+    "color": "Blue",
+    "img": "https://freebiescloud.com/wp-content/uploads/2020/10/1-31.png"
   },
   {
     "id": "3",
@@ -44,8 +44,8 @@
     "price": "20",
     "seats": "4",
     "gear": "Manual",
-    "color": "Grey",
-    "img": "https://cdn2.rcstatic.com/images/car_images/web/fiat/500_convertible_lrg.jpg"
+    "color": "Black",
+    "img": "https://di-uploads-pod4.dealerinspire.com/fiatoftacoma/uploads/2019/07/2019-FIAT-500-Granito-Gray.jpeg"
   },
   {
     "id": "5",
@@ -105,7 +105,7 @@
     "seats": "5",
     "gear": "Automatic",
     "color": "Red",
-    "img": "https://imgd.aeplcdn.com/227x128/n/cw/ec/22801/q2-exterior-right-front-three-quarter-70077.jpeg?q=85"
+    "img": "https://imgd.aeplcdn.com/1056x594/n/cw/ec/22801/q2-exterior-right-front-three-quarter-70077.jpeg?q=85&wm=1"
   },
   {
     "id": "10",
@@ -116,8 +116,8 @@
     "price": "74",
     "seats": "5",
     "gear": "Automatic",
-    "color": "Black",
-    "img": "https://crdms.images.consumerreports.org/c_lfill,w_270,q_auto,f_auto/prod/cars/cr/car-versions/2984-2017-fiat-124-lusso"
+    "color": "White",
+    "img": "https://carsguide-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto,t_cg_hero_low/v1/editorial/abarth-124-my19-index-1.png"
   },
   {
     "id": "11",
