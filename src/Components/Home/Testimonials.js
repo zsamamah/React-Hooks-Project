@@ -4,7 +4,7 @@ import Jack_Pic from "../../Assets/testimonials/im23.jpg";
 import Ali_Pic from "../../Assets/testimonials/im21.jpg";
 import Kristeen_Pic from "../../Assets/testimonials/im20.jpg";
 
-function Testimonial(props) {
+function Testimonial() {
   const [state, setState] = useState([
     {
       name: "Jack peter",
