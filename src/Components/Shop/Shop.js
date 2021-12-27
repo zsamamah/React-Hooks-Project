@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Shop.css";
 import ProductItem from "./ProductItem";
 import cars from "./cars.json";
+import { Link } from "react-router-dom";
 
 export function Shop() {
   const [carArray, setCarArray] = useState(cars);
@@ -99,7 +100,9 @@ export function Shop() {
           </select>
         </div>
         <div className="car-gallery">
-          <p>Gallery/{selectedCategory}</p>
+          <p>
+            <Link to="/">Home</Link> / Gallery / {selectedCategory}
+          </p>
           {carArray.map((car) => {
             return (
               <ProductItem
