@@ -124,9 +124,11 @@ function Cart1() {
     <div className="cartCont">
       <div id="selected_car">
       <div><button type="button" id="removeCart" onClick={emptyCart}><i className="far fa-times-circle fa-2x red"></i></button></div>
-        <div>
+        {/* <div id="cart_image"> */}
+        <div id="cart_image">
           <img src={cars[carId-1].img} alt="Car" />
         </div>
+        {/* </div> */}
         <div id="carDetailsMahdi">
           <p>
             {cars[carId-1].name} {cars[carId-1].model}
