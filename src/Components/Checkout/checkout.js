@@ -34,7 +34,7 @@ export default function Checkout() {
   const [couponHandler, setCouponHandler] = useState(null);
   const [discount, setDiscount] = useState(0);
 
-  let subtotal,total;
+  let subtotal, total;
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -63,7 +63,7 @@ export default function Checkout() {
   };
 
   const finalTotal = () => {
-      total = subtotal - discount;
+    total = subtotal - discount;
     return subtotal - discount;
   };
 
@@ -79,7 +79,7 @@ export default function Checkout() {
       pickup_Duration: `${duration[0]} : ${duration[duration.length - 1]}`,
       pickup_time: userData.pickup_time,
       until_time: userData.until_time,
-      total:total
+      total: total,
     };
 
     let ordersArr = JSON.parse(localStorage.getItem("submittedOrders"));
@@ -130,7 +130,7 @@ export default function Checkout() {
           <div className="empty-container">
             <div>Your car is rented successfully !</div>
             <Link to="/shop">
-              <button className="table-button3">Continue Shopping</button>
+              <button className="table-button3">Back to Gallery</button>
             </Link>
           </div>
         </>
@@ -299,7 +299,7 @@ export default function Checkout() {
             <div className="title-cart">Your cart is currently empty</div>
             <img src={Image} alt="empty cart" className="cart-img" />
             <Link to="/shop">
-              <button className="table-button3">Back to shopping</button>
+              <button className="table-button3">Back to Gallery</button>
             </Link>
           </div>
         </>
