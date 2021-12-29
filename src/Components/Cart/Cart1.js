@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import cars from "../Shop/cars.json";
 import Image from "../../Assets/cart/cart1.png";
 import Hero from "../Hero/Hero";
 import "./cart1.css";
 import "./Cart.css";
-import { useNavigate } from "react-router-dom";
 
 function Cart1() {
   let navigate = useNavigate();
-  let x = new Date();
-  let y = new Date();
-  y.setDate(y.getDate() + 7);
+  let currentDay = new Date();
+  let max = new Date();
+  max.setDate(max.getDate() + 7);
   const [carId, setCarId] = useState(localStorage.getItem("selected"));
-  const [today, setToday] = useState(x.toISOString().split("T")[0]);
-  const [maxDay, setMaxDay] = useState(y.toISOString().split("T")[0]);
+  const [today, setToday] = useState(currentDay.toISOString().split("T")[0]);
+  const [maxDay, setMaxDay] = useState(max.toISOString().split("T")[0]);
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedDate2, setSelectedDate2] = useState(null);
   const [reserved, setReserved] = useState(
@@ -53,13 +52,13 @@ function Cart1() {
     }
   };
 
-  const getDaysBetweenDates = (d0, d1) => {
+  const getDaysBetweenDates = (from, to) => {
     var msPerDay = 8.64e7;
-    var x0 = new Date(d0);
-    var x1 = new Date(d1);
-    x0.setHours(12, 0, 0);
-    x1.setHours(12, 0, 0);
-    return Math.round((x1 - x0) / msPerDay);
+    var fromDate = new Date(from);
+    var toDate = new Date(to);
+    fromDate.setHours(12, 0, 0);
+    toDate.setHours(12, 0, 0);
+    return Math.round((toDate - fromDate) / msPerDay);
   };
 
   const inquire = (e) => {
@@ -136,7 +135,7 @@ function Cart1() {
               <p>
                 {cars[carId - 1].name} {cars[carId - 1].model}
               </p>
-              <p>{cars[carId - 1].price}$ Per day</p>
+              <p>{cars[carId - 1].price}JOD Per day</p>
             </div>
             <form id="booking_Form" onSubmit={inquire}>
               <div className="formGroup">

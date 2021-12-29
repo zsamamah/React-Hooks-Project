@@ -10,7 +10,7 @@ export default function Checkout() {
   const loggedIn = localStorage.getItem("logged_in")
     ? JSON.parse(localStorage.getItem("logged_in"))
     : { fname: "", lname: "", email: "", phone: "" };
-  const mycar = cars[localStorage.getItem("selected") - 1];
+  const selectedCar = cars[localStorage.getItem("selected") - 1];
 
   useEffect(() => {
     if (!localStorage.getItem("logged_in")) {
@@ -58,7 +58,7 @@ export default function Checkout() {
 
   const totalPrice = () => {
     let days = JSON.parse(localStorage.getItem("temp"));
-    subtotal = mycar.price * days.length;
+    subtotal = selectedCar.price * days.length;
     return subtotal;
   };
 
@@ -90,13 +90,13 @@ export default function Checkout() {
       localStorage.setItem("submittedOrders", JSON.stringify([checkoutInfo]));
     }
 
-    let dates = JSON.parse(localStorage.getItem(`car${mycar.id}`));
+    let dates = JSON.parse(localStorage.getItem(`car${selectedCar.id}`));
     let new_dates = JSON.parse(localStorage.getItem("temp"));
     if (!dates) {
-      localStorage.setItem(`car${mycar.id}`, JSON.stringify(new_dates));
+      localStorage.setItem(`car${selectedCar.id}`, JSON.stringify(new_dates));
     } else {
       let new_array = [...dates, ...new_dates];
-      localStorage.setItem(`car${mycar.id}`, JSON.stringify(new_array));
+      localStorage.setItem(`car${selectedCar.id}`, JSON.stringify(new_array));
     }
 
     localStorage.removeItem("selected");
@@ -303,7 +303,7 @@ export default function Checkout() {
             </Link>
           </div>
         </>
-      )}{" "}
+      )}
     </>
   );
 }

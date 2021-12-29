@@ -1,8 +1,8 @@
-#cartContainer{
+#cartContainer {
   display: flex;
   flex-direction: row;
 }
-#cartContainer img{
+#cartContainer img {
   width: 80%;
   height: 70%;
 }
@@ -21,9 +21,8 @@
 }
 .table-head,
 .table-footer {
-  /* background-color: rgb(245, 245, 245); */
   border: none;
-  padding-top: 1.5em
+  padding-top: 1.5em;
 }
 .table-btn {
   padding: 0.6em 1em;
@@ -32,8 +31,8 @@
   border-radius: 0.5em;
   color: #fff;
 }
-.table-btn:hover{
-  background-color:#739996;
+.table-btn:hover {
+  background-color: #739996;
 }
 .table-input {
   /* width: 25%; */
@@ -108,7 +107,7 @@
   color: #fff;
   margin-top: 1em;
 }
-.table-button3:hover{
+.table-button3:hover {
   background-color: var(--p_green);
 }
 .empty-container {

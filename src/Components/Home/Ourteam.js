@@ -42,14 +42,10 @@ function Team(props) {
             <div className="memberContainer">
               <div class="row text-center">
                 <div class="col-12 text-center">
-                  {/* <h1 class="display-3 fw-bold text-black home-heading ">
-                    Our Team
-                  </h1> */}
                   <hr
                     class="bg-white mb-4 mt-0 d-inline-block mx-auto"
                     style={{ width: "100px", height: "3px" }}
                   />
-                  {/* <p class="p-text text-white">What we offer</p> */}
                 </div>
               </div>
               <div class="row align-items-md-center text-white text-center">
@@ -62,14 +58,6 @@ function Team(props) {
                     <div class="carousel-inner">
                       <div class="carousel-item active">
                         <div class="row p-4">
-                          {/* <div class="t-card">
-                            <img
-                              src={zaid_pic}
-                              alt="laptop hp"
-                              style={{ width: "100%" }}
-                            />
-                          </div> */}
-
                           <div class="row">
                             <div class="col-sm-10 text-center ">
                               <div className={ourTeam[0].class}>
@@ -110,14 +98,6 @@ function Team(props) {
                         return (
                           <div id={index} class="carousel-item">
                             <div class="row p-4">
-                              {/* <div class="t-card">
-                                <img
-                                  src={teamInfo.image}
-                                  alt="laptop hp"
-                                  style={{ width: "100%" }}
-                                />
-                              </div> */}
-
                               <div class="row">
                                 <div class="col-sm-10 text-center ">
                                   <div className={teamInfo.class}>
@@ -150,7 +130,6 @@ function Team(props) {
                                       </a>
                                     </div>
                                   </div>
-                                  {/* </p> */}
                                 </div>
                               </div>
                             </div>

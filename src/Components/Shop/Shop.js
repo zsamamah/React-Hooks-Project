@@ -101,7 +101,7 @@ export function Shop() {
         </div>
         <div className="car-gallery">
           <p>
-            <Link to="/">Home</Link> / Gallery / {selectedCategory}
+            <Link to="/">Home</Link> / Gallery /{selectedCategory}
           </p>
           {carArray.map((car) => {
             return (
